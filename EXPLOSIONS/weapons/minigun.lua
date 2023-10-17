@@ -1,0 +1,1 @@
+FireEffect = path .. "/effects/fire_minigun.lua"

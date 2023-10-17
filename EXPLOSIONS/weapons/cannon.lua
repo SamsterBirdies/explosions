@@ -1,0 +1,9 @@
+Recoil = Recoil * 3
+DestroyProjectile = "sb_shockwave_large"
+DeviceSplashDamage = 222
+DeviceSplashDamageMaxRadius = 400
+DeviceSplashDamageDelay = 0.2
+IncendiaryRadius = 150
+IncendiaryRadiusHeated = 190
+StructureSplashDamage = 180
+StructureSplashDamageMaxRadius = 180

@@ -1,0 +1,1 @@
+GenerateBeamTable(BeamDuration, 0.05, 5)
