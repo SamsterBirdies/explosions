@@ -6,9 +6,7 @@ if not sb_EXPLOSIONS_destruct then sb_EXPLOSIONS_destruct = {} end
 if not sb_EXPLOSIONS_impact then sb_EXPLOSIONS_impact = {} end
 
 --[[
-Check out weapons/weapon.lua, devices/device.lua, and weapons/projectile_list.lua to support effects better. (append effect redirects into sbe_effects_list)
-
-Alternatively, insert tables into the provided tables to add mod support for effect overlays.
+Insert tables into the provided tables to add mod support.
 
 Example code:
 -------------------

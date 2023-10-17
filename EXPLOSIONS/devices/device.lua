@@ -1,11 +1,15 @@
---automatic device destruction splash force effect
-if DeviceSplashDamageMaxRadius and DeviceSplashDamageMaxRadius > 0 and DestroyProjectile == nil then
+--[[if DeviceSplashDamageMaxRadius and DeviceSplashDamageMaxRadius > 0 and DestroyProjectile == nil then
 	if DeviceSplashDamageMaxRadius >= 300 or StructureSplashDamageMaxRadius >= 150 then
 		DestroyProjectile = "sb_shockwave_large"
 	elseif DeviceSplashDamageMaxRadius >= 200 or StructureSplashDamageMaxRadius >= 100 then
 		DestroyProjectile = "sb_shockwave"
 	elseif DeviceSplashDamageMaxRadius >= 100 or StructureSplashDamageMaxRadius >= 50 then
 		DestroyProjectile = "sb_shockwave_small"
+	end
+end]]
+if DestroyProjectile then
+	if DestroyProjectile == "sb_shockwave_huge" or DestroyProjectile == "sb_shockwave_large" or DestroyProjectile == "sb_shockwave_small" or DestroyProjectile == "sb_shockwave_reactor" then
+		DestroyProjectile = nil
 	end
 end
 --automatically apply some effects

@@ -1,12 +1,4 @@
 dofile("scripts/forts.lua")
-dofile(path .. "/BetterLog.lua")
-
---dofile("mods/commander-cf-buster/effects/uranium_fly_missile.lua")
---e1 = Effects
-
---dofile("mods/commander-cf-buster/effects/impact_uranium.lua")
---e2 = Effects
-
 --effect paths
 ed1 = path .. "/effects/generic.lua"
 ed2 = path .. "/effects/generic_large.lua"
@@ -96,8 +88,6 @@ function OnProjectileDestroyed(nodeId, teamId, saveName, structureIdHit, destroy
 end
 --mod support
 function Load()
-	--BetterLog(e1)
-	--BetterLog(e2)
 	--device destruct dbconstants load
 	for i = 1, 2^10 do
 		local saveName = GetConstantString("sb_EXPLOSIONS_destruct." .. tostring(i) .. ".1")
