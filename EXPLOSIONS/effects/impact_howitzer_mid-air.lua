@@ -8,10 +8,10 @@ table.insert(Effects,
 		Type = "shake",
 		PlayForEnemy = true,
 		FalloffStart = 1000,
-		FalloffEnd = 6000,
+		FalloffEnd = 4000,
 		TimeToTrigger = 0,
 		TimeToLive = 0.35,
-		Magnitude = 100,
+		Magnitude = 50,
 	})
 table.insert(Effects,
 	{

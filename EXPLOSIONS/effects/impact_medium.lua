@@ -88,6 +88,6 @@ table.insert(Effects,
 		FalloffEnd = 4000,
 		TimeToTrigger = 0,
 		TimeToLive = 0.12,
-		Magnitude = 20,
+		Magnitude = 17,
 	}
 )
