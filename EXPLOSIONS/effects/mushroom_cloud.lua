@@ -111,7 +111,7 @@ table.insert(Effects,
 		FalloffStart = 3000,
 		FalloffEnd = 10000,
 		TimeToTrigger = 0,
-		TimeToLive = 0.3,
-		Magnitude = 150,
+		TimeToLive = 0.45,
+		Magnitude = 300,
 	}
 )

@@ -1,4 +1,5 @@
 DestroyProjectile = "sb_shockwave"
+
 local multiplier = 5
 BeamTable =
 {
@@ -9,13 +10,6 @@ BeamTable =
 	{ 1.5,	0 * multiplier,	0, },
 }
 
---[[
-BeamTable =
-{
-	{ 0,   1,  0, },
-	{ 0.01, 1,  0, },
-}
-]]
 function BeamThickness(t)
 	return InterpolateTable(BeamTable, t, 2)
 end

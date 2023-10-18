@@ -1,6 +1,5 @@
-sb_EXPLOSIONS_path = path
-
---[[
+sb_EXPLOSIONS_path = path --can detect mod, hopefully
+--automatic device destruction splash force effect
 if DeviceSplashDamageMaxRadius and DeviceSplashDamageMaxRadius > 0 and DestroyProjectile == nil then
 	if DeviceSplashDamageMaxRadius >= 400 or StructureSplashDamageMaxRadius >= 220 then
 		DestroyProjectile = "sb_shockwave_huge"
@@ -10,11 +9,6 @@ if DeviceSplashDamageMaxRadius and DeviceSplashDamageMaxRadius > 0 and DestroyPr
 		DestroyProjectile = "sb_shockwave"
 	elseif DeviceSplashDamageMaxRadius >= 100 or StructureSplashDamageMaxRadius >= 50 then
 		DestroyProjectile = "sb_shockwave_small"
-	end
-end]]
-if DestroyProjectile then
-	if DestroyProjectile == "sb_shockwave_huge" or DestroyProjectile == "sb_shockwave_large" or DestroyProjectile == "sb_shockwave_small" or DestroyProjectile == "sb_shockwave_reactor" then
-		DestroyProjectile = nil
 	end
 end
 --automatically apply some effects
