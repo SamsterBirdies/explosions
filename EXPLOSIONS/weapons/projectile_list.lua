@@ -1,4 +1,3 @@
---dofile(path .. "/BetterLog.lua")
 sb_EXPLOSIONS_path = path
 table.insert(Sprites,
 {
@@ -17,7 +16,7 @@ table.insert(Sprites,
 			{ texture = path .. "/effects/media/bloom1.png" , colour = { 0.9, 0.82, 0.1, 0.2 },},
 			duration = 0.04,
 			NextState = "Normal",
-		},},
+		}},
 	},
 })
 table.insert(Sprites,
@@ -28,6 +27,7 @@ table.insert(Sprites,
 		Normal = { Frames = 
 		{ 
 			{ texture = path .. "/effects/media/bloom1.png" , colour = { 0.2, 0.4, 1, 0.3 },},
+			Additive = true, additive = true,
 		}},
 	},
 })
@@ -72,7 +72,7 @@ for k, v in pairs(Projectiles) do
 		v.Effects.Impact.rocks01 = nil
 		v.Effects.Impact.shield = nil
 
-		v.ProjectileSplashMaxForce = 205000
+		--v.ProjectileSplashMaxForce = 205000
 		table.insert(v.Projectile.Root.ChildrenInFront,
 		{
 			Name = "Bloom",
@@ -92,30 +92,6 @@ for k, v in pairs(Projectiles) do
 		v.ProjectileSprite = "sb_bloom_firebeam"
 	elseif sbeat(v.SaveName, "laser") then
 		v.ProjectileSprite = "sb_bloom_plasma"
-		--[[v.BeamTable =
-		{
-			{ 0,	1 *  5,	0, },
-			{ 0.25, 3 *  5,  0, },
-			{ 0.5,	30 * 5, 1000, },
-			{ 1,	30 * 5, 1000, }, -- 1000
-			{ 1.5,	0 *  5,	0, },
-		}
-		v.BeamThickness = function(t)
-			return InterpolateTable(v.BeamTable, t, 2)
-		end
-		v.Beam =
-		{
-			Sprites = 
-            {
-				{
-                    Sprite = "sb_bloom_plasma",
-                    TileRate = 100,
-                    ThicknessFunction = "BeamThickness",
-                    ScrollRate = -2,
-					Additive = true,
-                },
-			},
-		}]]
 	elseif sbeat(v.SaveName, "missile") then
 		table.insert(v.Projectile.Root.ChildrenInFront,
 		{
@@ -129,7 +105,7 @@ for k, v in pairs(Projectiles) do
 			Scale = 4,
 		})
 	elseif sbeat(v.SaveName, "missile2") then
-		v.ProjectileSplashMaxForce = 400000
+		--v.ProjectileSplashMaxForce = 400000
 		table.insert(v.Projectile.Root.ChildrenInFront,
 		{
 			Name = "Bloom",
@@ -148,7 +124,7 @@ for k, v in pairs(Projectiles) do
 		v.Effects.Impact.rocks01 = nil
 		v.Effects.Impact.device = nil
 		
-		v.ProjectileSplashMaxForce = 130000
+		--v.ProjectileSplashMaxForce = 130000
 		table.insert(v.Projectile.Root.ChildrenInFront,
 		{
 			Name = "Bloom",
@@ -193,25 +169,17 @@ for k, v in pairs(Projectiles) do
 		v.ProjectileType = "mortar"
 		v.Effects.Age.t200.Effect = path .. "/effects/dome_fx.lua"
 	elseif sbeat(v.SaveName, "howitzer") then
-		v.ProjectileSplashMaxForce = 550000
 		v.Effects.Impact.default = path .. "/effects/impact_howitzer.lua"
 		v.Effects.Impact.antiair = path .. "/effects/impact_howitzer_mid-air.lua"
 		v.Effects.Impact.backbracing.Effect = path .. "/effects/impact_howitzer.lua"
 	elseif sbeat(v.SaveName, "bomb") then
-		v.ProjectileSplashMaxForce = 150000
 		v.Effects.Impact.default = path .. "/effects/impact_bombs.lua"
 	elseif sbeat(v.SaveName, "paveway") then
-		v.ProjectileSplashMaxForce = 450000
 		v.Effects.Impact.default = path .. "/effects/impact_paveway.lua"
 		v.Effects.Impact.antiair = path .. "/effects/hs_explosion_airburst.lua"
 	elseif sbeat(v.SaveName, "turret") then
-		v.ProjectileSplashMaxForce = 450000
 		v.Effects.Impact.default = path .. "/effects/impact_turret.lua"
 		v.Effects.Impact.antiair = path .. "/effects/hs_explosion_airburst.lua"
-	elseif sbeat(v.SaveName, "cannon") then
-		v.ProjectileSplashMaxForce = 200000
-	elseif sbeat(v.SaveName, "mortar") or sbeat(v.SaveName, "mortar2") then
-		v.ProjectileSplashMaxForce = 130000
 	end
 	--convert some trail effects
 	if v.TrailEffect then
@@ -222,9 +190,7 @@ for k, v in pairs(Projectiles) do
 		end
 	end
 end
-if FlakDetonation then
-	FlakDetonation.Effect = path .. "/effects/flak_explode.lua"
-end
+FlakDetonation.Effect = path .. "/effects/flak_explode.lua"
 --shockwave projectiles (exploding devices cant cause splash force)
 local shock = DeepCopy(FindProjectile("mortar"))
 if shock then
