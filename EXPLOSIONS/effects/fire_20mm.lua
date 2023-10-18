@@ -82,19 +82,10 @@ Effects =
 	{
 		Type = "shake",
 		PlayForEnemy = true,
-		FalloffStart = 1500,
-		FalloffEnd = 6000,
-		TimeToTrigger = 0,
-		TimeToLive = 0.7,
-		Magnitude = 10,
-	},
-	{
-		Type = "shake",
-		PlayForEnemy = true,
 		FalloffStart = 1000,
-		FalloffEnd = 6000,
+		FalloffEnd = 4000,
 		TimeToTrigger = 0,
 		TimeToLive = 0.2,
-		Magnitude = 30,
+		Magnitude = 20,
 	},
 }
