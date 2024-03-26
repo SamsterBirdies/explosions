@@ -306,11 +306,12 @@ function sb_apply_fx()
 						end
 					end
 				end
-			elseif v.Effects.Age then
-				for kk, vv in pairs(v.Effects.Impact) do
+			end
+			if v.Effects.Age then
+				for kk, vv in pairs(v.Effects.Age) do
 					if type(vv) == "string" then
 						if sbe_effects_list[vv] then
-							v.Effects.Impact[kk] = sbe_effects_list[vv]
+							v.Effects.Age[kk] = sbe_effects_list[vv]
 						end
 					elseif type(vv) == "table" then
 						if vv.Effect and sbe_effects_list[vv.Effect] then

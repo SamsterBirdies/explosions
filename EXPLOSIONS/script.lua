@@ -1,5 +1,5 @@
 dofile("scripts/forts.lua")
-dofile(path .. "/BetterLog.lua")
+--dofile(path .. "/BetterLog.lua")
 
 --dofile("mods/commander-cf-buster/effects/uranium_fly_missile.lua")
 --e1 = Effects
@@ -126,8 +126,8 @@ function Load()
 			end
 			--destroy type flags
 			local flags = {false,false,false,false,false,false,false,false,false,false,false}
-			for ii = 1, 10 do
-				if GetConstant("sb_EXPLOSIONS_destruct." .. tostring(i) .. ".3." .. tostring(ii)) == 1 then
+			for ii = 1, 11 do
+				if GetConstant("sb_EXPLOSIONS_impact." .. tostring(i) .. ".3." .. tostring(ii)) == 1 then
 					flags[ii] = true
 				end
 			end
@@ -135,4 +135,5 @@ function Load()
 			data.effect_impact[saveName] = {effectPath, flags}
 		end
 	end
+	--BetterLog(data.effect_impact)
 end
