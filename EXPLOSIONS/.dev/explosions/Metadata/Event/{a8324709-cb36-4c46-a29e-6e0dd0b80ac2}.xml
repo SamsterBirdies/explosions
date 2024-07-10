@@ -70,7 +70,7 @@
 	</object>
 	<object class="EventAutomatableProperties" id="{b75fccff-2a61-4c9e-af63-abb4797b8454}">
 		<property name="maxVoices">
-			<value>6</value>
+			<value>5</value>
 		</property>
 		<property name="priority">
 			<value>3</value>
@@ -113,7 +113,7 @@
 	</object>
 	<object class="EventMixerMaster" id="{05931b56-78fa-461b-81d4-fb2c88f388dc}">
 		<property name="volume">
-			<value>-3</value>
+			<value>-1.5</value>
 		</property>
 		<relationship name="effectChain">
 			<destination>{5f58a323-d7c7-4694-b9f2-ff6683e2c0f4}</destination>
@@ -382,7 +382,7 @@
 	</object>
 	<object class="AutomationPoint" id="{9b5d513d-7dff-42c9-9e9c-a160721a3db6}">
 		<property name="position">
-			<value>1000</value>
+			<value>2000</value>
 		</property>
 		<property name="value">
 			<value>22000</value>
@@ -396,12 +396,12 @@
 			<value>10000</value>
 		</property>
 		<property name="value">
-			<value>2000</value>
+			<value>2400</value>
 		</property>
 	</object>
 	<object class="AutomationPoint" id="{24d60d55-9011-40b0-b6d8-992080562afa}">
 		<property name="position">
-			<value>1000</value>
+			<value>2000</value>
 		</property>
 		<property name="value">
 			<value>10</value>
@@ -412,7 +412,7 @@
 			<value>10000</value>
 		</property>
 		<property name="value">
-			<value>150</value>
+			<value>100</value>
 		</property>
 	</object>
 	<object class="AutomationPoint" id="{c6f8e94a-eaaf-4d2f-a377-c102a480dd2b}">
