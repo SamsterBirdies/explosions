@@ -1,5 +1,5 @@
 
-LifeSpan = 3.0
+LifeSpan = 4.5
 SoundEvent = "mods/weapon_pack/effects/rocket_structure_hit"
 Effects =
 {
@@ -30,14 +30,14 @@ Effects =
 		Drag = 0,
 		Sprite = path .. "/effects/media/bloom3.png",
 		Additive = true,
-		TimeToLive = 0.2,
+		TimeToLive = 0.3,
 		InitialSize = 10,
 		ExpansionRate = -100,
 		Angle = -90,
 		AngularVelocity = 0,
 		RandomAngularVelocityMagnitude = 200,
-		Colour1 = { 255, 255, 255, 168 },
-		Colour2 = { 255, 140, 0, 0 },
+		Colour1 = { 255, 230, 200, 168 },
+		Colour2 = { 255, 100, 0, 0 },
 	},
 	{
 		Type = "sprite",
@@ -55,7 +55,7 @@ Effects =
 		AngularVelocity = 0,
 		RandomAngularVelocityMagnitude = 700,
 		Colour1 = { 255, 255, 255, 128 },
-		Colour2 = { 255, 140, 0, 0 },
+		Colour2 = { 255, 120, 0, 0 },
 	},
 	{
 	--DUST CLOUDS
@@ -80,18 +80,18 @@ Effects =
 				Angle = 0,
 				RadialOffsetMin = 0,
 				RadialOffsetMax = 20,
-				ScaleMean = 9,
-				ScaleStdDev = 3,
+				ScaleMean = 5,
+				ScaleStdDev = 2,
 				SpeedStretch = 0,
-				SpeedMean = 400,	
-				SpeedStdDev = 200,
+				SpeedMean = 200,	
+				SpeedStdDev = 150,
 				Drag = 1,
 				RotationMean = 0,
 				RotationStdDev = 45,
 				RotationalSpeedMean = 0,
 				RotationalSpeedStdDev = 40,
-				AgeMean = 5.5,
-				AgeStdDev = 1.5,
+				AgeMean = 3.0,
+				AgeStdDev = 1.0,
 				AlphaKeys = { 0.5, 0.5 },
 				ScaleKeys = { 0.1, 0.5 },
 			},
