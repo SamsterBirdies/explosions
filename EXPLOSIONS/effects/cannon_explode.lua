@@ -2,6 +2,7 @@ dofile("effects/device_explode_util.lua")
 dofile(path .. "/effects/util.lua")
 --  age (in seconds) at which the explosion actor deletes itself
 --  make sure this exceedes the age of all effects
+SoundEvent = "mods/EXPLOSIONS/effects/large_explosion"
 LifeSpan = 6.0
 function Streamers(delay, count)
 	return {

@@ -53,7 +53,7 @@ Effects =
 		SparksPerBurst = 1,
 		LocalPosition = { x = 0, y = 0, z = -10 },	-- how to place the origin relative to effect position and direction (0, 0) 
 		Sprite = path .. "/effects/media/bloom1.png",
-
+		KillParticleOnEffectCancel = true,
 		Gravity = 0,						-- gravity applied to particle (981 is earth equivalent)
 		Additive = true,
 		NormalDistribution =					-- distribute sparks evenly between two angles with optional variation

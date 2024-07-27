@@ -1,4 +1,5 @@
 dofile(path .. "/effects/util.lua")
+SoundEvent = "mods/EXPLOSIONS/effects/large_explosion"
 LifeSpan = 5
 Effects = 
 {

@@ -1,3 +1,4 @@
+SoundEvent = "mods/EXPLOSIONS/effects/med_explosion"
 Effects =
 {
 	Debris("gunner"),

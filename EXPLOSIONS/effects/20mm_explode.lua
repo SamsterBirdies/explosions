@@ -3,7 +3,7 @@ dofile(path .. "/effects/util.lua")
 --  age (in seconds) at which the explosion actor deletes itself
 --  make sure this exceedes the age of all effects
 LifeSpan = 6.0
-SoundEvent = "effects/device_explode"
+SoundEvent = "mods/EXPLOSIONS/effects/large_explosion"
 Effects =
 {
 	Debris("weapons/gunner.dds"),
