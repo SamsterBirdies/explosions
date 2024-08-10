@@ -1,6 +1,5 @@
 --dofile(path .. "/BetterLog.lua")
 sb_EXPLOSIONS_path = path
-
 table.insert(Sprites,
 {
 	Name = "sb_bloom_swarm",
@@ -68,7 +67,7 @@ for k, v in pairs(Projectiles) do
 	if sbeat(v.SaveName, "rocket") then
 		v.Effects.Impact.default = path .. "/effects/rocket_structure_hit.lua"
 		v.Effects.Impact.device = nil
-		v.Effects.Impact.antiair = nil
+		v.Effects.Impact.antiair = path .. "/effects/rocket_structure_hit.lua"
 		v.Effects.Impact.foundations = nil
 		v.Effects.Impact.rocks01 = nil
 		v.Effects.Impact.shield = nil
