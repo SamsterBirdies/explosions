@@ -1,6 +1,6 @@
 dofile("effects/device_explode_util.lua")
-dofile("mods/commander-cf-buster/effects/impact_emp_small.lua")
-SoundEvent = "mods/commander-cf-buster/effects/impact_emp_small"
+dofile("mods/commander-cf-moonshine/effects/impact_emp_small.lua")
+SoundEvent = "mods/commander-cf-moonshine/effects/impact_emp_small"
 
 table.insert(Effects,
 	{

@@ -8,6 +8,8 @@ function sbe_moonshine_fix()
 							v.Effects.Impact[kk] = sb_EXPLOSIONS_path .. "/effects/impact_emp.lua"
 						elseif vv == "mods/weapon_pack/effects/impact_emp_medium.lua" then
 							v.Effects.Impact[kk] = sb_EXPLOSIONS_path .. "/effects/impact_emp_medium.lua"
+						elseif vv == "mods/commander-cf-moonshine/effects/impact_emp_small.lua" then
+							v.Effects.Impact[kk] = sb_EXPLOSIONS_path .. "/effects/impact_emp_small.lua"
 						end
 					elseif type(vv) == "table" then
 						if vv.Effect then
@@ -15,6 +17,8 @@ function sbe_moonshine_fix()
 								vv.Effect = sb_EXPLOSIONS_path .. "/effects/impact_emp.lua"
 							elseif vv.Effect and vv.Effect =="mods/weapon_pack/effects/impact_emp_medium.lua" then
 								vv.Effect = sb_EXPLOSIONS_path .. "/effects/impact_emp_medium.lua"
+							elseif vv.Effect and vv.Effect == "mods/commander-cf-moonshine/effects/impact_emp_small.lua" then
+								vv.Effect = sb_EXPLOSIONS_path .. "/effects/impact_emp_small.lua"
 							end
 						end
 					end
