@@ -1,3 +1,4 @@
+if not Effects then Effects = {} end
 table.insert(Effects,
 	{
 		Type = "sparks",

@@ -1,4 +1,5 @@
 LifeSpan = 6
+if not Effects then Effects = {} end
 table.insert(Effects,
 	{
 		Type = "sprite",

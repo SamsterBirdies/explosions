@@ -1,5 +1,6 @@
 --dofile(path .. "/BetterLog.lua")
 sb_EXPLOSIONS_path = path
+
 table.insert(Sprites,
 {
 	Name = "sb_bloom_swarm",
@@ -319,6 +320,11 @@ function sb_apply_fx()
 						end
 					end
 				end
+			end
+		end
+		if v.sbexp_overrides then
+			for kk, vv in pairs(v.sbexp_overrides) do
+				v[kk] = vv
 			end
 		end
 	end

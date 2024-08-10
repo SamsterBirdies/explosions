@@ -1,4 +1,5 @@
 dofile(path .. "/effects/util.lua")
+dofile("effects/device_explode_util.lua")
 Effects =
 {
 	DeviceExplodeSprite(),

@@ -1,3 +1,4 @@
+dofile("effects/device_explode_util.lua")
 SoundEvent = "mods/EXPLOSIONS/effects/med_explosion"
 Effects =
 {

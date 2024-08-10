@@ -1,6 +1,6 @@
 --  age (in seconds) at which the explosion deletes itself
 --  make sure this exceedes the age of all effects
-
+if not Effects then Effects = {} end
 table.insert(Effects,
 {
 		Type = "sparks",

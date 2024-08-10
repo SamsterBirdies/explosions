@@ -1,3 +1,5 @@
+dofile("effects/device_explode_util.lua")
+if Effects then
 Sprites = {
 {
 		Name = "sb_battery_emp",
@@ -30,6 +32,7 @@ Sprites = {
 		},
 	},
 }
+end
 Effects =
 {
 	DeviceExplodeSprite(),

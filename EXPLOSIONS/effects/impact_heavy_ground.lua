@@ -1,4 +1,5 @@
 dofile(path .. "/effects/util.lua")
+if not Effects then Effects = {} end
 table.insert(Effects,Dirt(0.4, 1400))
 table.insert(Effects,
 	{
