@@ -321,6 +321,9 @@ function sb_apply_fx()
 				end
 			end
 		end
+		if v.TrailEffect and sbe_effects_list[v.TrailEffect] then
+			v.TrailEffect = sbe_effects_list[v.TrailEffect]
+		end
 		if v.sbexp_overrides then
 			for kk, vv in pairs(v.sbexp_overrides) do
 				v[kk] = vv
