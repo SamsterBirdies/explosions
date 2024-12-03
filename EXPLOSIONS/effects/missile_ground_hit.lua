@@ -10,7 +10,7 @@ Sprites =
 
 Effects =
 {
-	Flames(4, 0.7, 800),
+	--Flames(4, 0.7, 800),
 	Flames(6, 0.25, 2000),
 	Dirt(0.3, 2000),
 	Dirt(0.5, 900),
@@ -38,8 +38,8 @@ Effects =
 		FalloffStart = 1000,
 		FalloffEnd = 6000,
 		TimeToTrigger = 0,
-		TimeToLive = 0.35,
-		Magnitude = 100,
+		TimeToLive = 0.3,
+		Magnitude = 80,
 	},
 	{
 		Type = "sprite",
@@ -86,7 +86,7 @@ Effects =
 		Drag = 0,
 		Sprite = path .. "/effects/media/bloom1.png",
 		Additive = true,
-		TimeToLive = 0.08,
+		TimeToLive = 0.16,
 		InitialSize = 6,
 		ExpansionRate = -20,
 		Angle = 0,
@@ -476,7 +476,7 @@ Effects =
 		FalloffStart = 2000,
 		FalloffEnd = 10000,
 		TimeToTrigger = 0.1,
-		TimeToLive = 3,
+		TimeToLive = 1,
 		Magnitude = 38,
 	},
 }

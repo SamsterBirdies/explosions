@@ -3,8 +3,8 @@ dofile(path .. "/effects/util_dlc.lua")
 dofile(path .. "/effects/util.lua")
 SoundEvent = "mods/dlc1_weapons/effects/impact_howitzer"
 fix_dupe("impact_howizter_big", "mods/dlc1_weapons") --bruh devs mispelled howitzer
-table.insert(Effects, Flames(4, 0.7, 800))
-table.insert(Effects, Flames(6, 0.25, 2000))
+--table.insert(Effects, Flames(4, 0.7, 800))
+--table.insert(Effects, Flames(6, 0.25, 2000))
 table.insert(Effects,
 	{
 		Type = "shake",
@@ -82,7 +82,7 @@ table.insert(Effects,
 		Drag = 0,
 		Sprite = path .. "/effects/media/bloom1.png",
 		Additive = true,
-		TimeToLive = 0.08,
+		TimeToLive = 0.16,
 		InitialSize = 6,
 		ExpansionRate = -20,
 		Angle = 0,

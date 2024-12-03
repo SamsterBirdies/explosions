@@ -4,7 +4,7 @@ dofile(path .. "/effects/util.lua")
 fix_dupe("explosion_paveway", "mods/dlc2")
 fix_dupe("incendiary_explosion", "mods/dlc2")
 
-table.insert(Effects, Flames(6, 0.4, 1400))
+--table.insert(Effects, Flames(6, 0.4, 1400))
 table.insert(Effects,
 	{
 		Type = "shake",
@@ -82,7 +82,7 @@ table.insert(Effects,
 		Drag = 0,
 		Sprite = path .. "/effects/media/bloom1.png",
 		Additive = true,
-		TimeToLive = 0.08,
+		TimeToLive = 0.16,
 		InitialSize = 6,
 		ExpansionRate = -20,
 		Angle = 0,
