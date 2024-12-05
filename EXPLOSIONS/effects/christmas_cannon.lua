@@ -1,0 +1,51 @@
+dofile("mods/theme_christmas/effects/fire_cannon_snowballs.lua")
+Sprites = {}
+if not Effects then Effects = {} end
+table.insert(Effects,
+{
+	Type = "sprite",
+	TimeToTrigger = 0,
+	LocalPosition = { x = 0, y = 50, z = -100 },
+	LocalVelocity = { x = 0, y = 300, z = 0 },
+	Acceleration = { x = 0, y = 0, z = 0 },
+	Drag = 0,
+	Sprite = path .. "/effects/media/bloom4.png",
+	Additive = true,
+	TimeToLive = 0.12,
+	InitialSize = 1,
+	ExpansionRate = 12000,
+	Angle = 0,
+	AngularVelocity = 0,
+	RandomAngularVelocityMagnitude = 0,
+	Colour1 = { 240, 255, 120, 160 },
+	Colour2 = { 255, 100, 0, 0 },
+})
+table.insert(Effects,
+{
+	Type = "sprite",
+	TimeToTrigger = 0,
+	LocalPosition = { x = 0, y = 0, z = -100 },
+	LocalVelocity = { x = 0, y = 1500, z = 0 },
+	Acceleration = { x = 0, y = 0, z = 0 },
+	Drag = 0,
+	Sprite = path .. "/effects/media/bloom1.png",
+	Additive = true,
+	TimeToLive = 0.16,
+	InitialSize = 10,
+	ExpansionRate = -4000,
+	Angle = 0,
+	AngularVelocity = 0,
+	RandomAngularVelocityMagnitude = 0,
+	Colour1 = { 230, 255, 170, 200 },
+	Colour2 = { 200, 255, 100, 0 },
+})
+table.insert(Effects,
+{
+	Type = "shake",
+	PlayForEnemy = true,
+	FalloffStart = 1000,
+	FalloffEnd = 4000,
+	TimeToTrigger = 0,
+	TimeToLive = 0.2,
+	Magnitude = 40,
+})

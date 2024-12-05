@@ -23,8 +23,13 @@ sbe_effects_list["mods/weapon_pack/effects/rocketemp_explode.lua"] = path .. "/e
 sbe_effects_list["mods/dlc1_weapons/effects/fire_smokebomb.lua"] = path .. "/effects/fire_smokebomb.lua"
 sbe_effects_list["mods/dlc1_weapons/effects/fire_howitzer.lua"] = path .. "/effects/fire_howitzer.lua"
 sbe_effects_list["effects/fire_minigun.lua"] = path .. "/effects/fire_minigun.lua"
+--seasonal
+sbe_effects_list["mods/theme_christmas/effects/mushroom_cloud_snowflakes.lua"] = path .. "/effects/christmas_reactor.lua"
 
 if DestroyEffect and sbe_effects_list[DestroyEffect] then DestroyEffect = sbe_effects_list[DestroyEffect] end
+--seasonal
+if DestroyEffect_christmas and sbe_effects_list[DestroyEffect_christmas] then DestroyEffect_christmas = sbe_effects_list[DestroyEffect_christmas] end
+if DestroyEffect_halloween and sbe_effects_list[DestroyEffect_halloween] then DestroyEffect_halloween = sbe_effects_list[DestroyEffect_halloween] end
 --run function. Any device can run its own code
 if sbe_run then
 	sbe_run()

@@ -31,9 +31,23 @@ sbe_effects_list["mods/dlc2/effects/fire_deckgun.lua"] = path .. "/effects/fire_
 sbe_effects_list["mods/dlc2/effects/fire_deckgun_2.lua"] = path .. "/effects/fire_deckgun_2.lua"
 sbe_effects_list["mods/dlc2/effects/fire_deckgun_3.lua"] = path .. "/effects/fire_deckgun_3.lua"
 
+--christmas
+sbe_effects_list["mods/theme_christmas/effects/mushroom_cloud_snowflakes.lua"] = path .. "/effects/christmas_reactor.lua"
+sbe_effects_list["mods/theme_christmas/effects/fire_machinegun_snowballs.lua"] = path .. "/effects/christmas_machinegun.lua"
+sbe_effects_list["mods/theme_christmas/effects/fire_minigun_snowballs.lua"] = path .. "/effects/christmas_minigun.lua"
+sbe_effects_list["mods/theme_christmas/effects/fire_20mmcannon_snowballs.lua"] = path .. "/effects/christmas_20mm.lua"
+sbe_effects_list["mods/theme_christmas/effects/fire_cannon_snowballs.lua"] = path .. "/effects/christmas_cannon.lua"
+
+
 --change effects
 if FireEffect and sbe_effects_list[FireEffect] then FireEffect = sbe_effects_list[FireEffect] end
 if DestroyEffect and sbe_effects_list[DestroyEffect] then DestroyEffect = sbe_effects_list[DestroyEffect] end
+--christmas
+if FireEffect_christmas and sbe_effects_list[FireEffect_christmas] then FireEffect_christmas = sbe_effects_list[FireEffect_christmas] end
+if DestroyEffect_christmas and sbe_effects_list[DestroyEffect_christmas] then DestroyEffect_christmas = sbe_effects_list[DestroyEffect_christmas] end
+--halloween
+if FireEffect_halloween and sbe_effects_list[FireEffect_halloween] then FireEffect_halloween = sbe_effects_list[FireEffect_halloween] end
+if DestroyEffect_halloween and sbe_effects_list[DestroyEffect_halloween] then DestroyEffect_halloween = sbe_effects_list[DestroyEffect_halloween] end
 --run function. Any device can run its own code
 if sbe_run then
 	sbe_run()
