@@ -27,3 +27,11 @@ table.insert(sb_EXPLOSIONS_impact, {"railgun_projectile", "generic.lua", {0,0,1,
 Description of each table position:
 {none, unknown, hitprojectile, hitbeam, hitterrain, hitstructure, hitdevice, outofworld, expired, ageeffect, debriscleanup}
 ]]
+
+--landcruisers
+table.insert(sb_EXPLOSIONS_destruct, {"vehicleControllerStructure", "generic.lua", 1})
+table.insert(sb_EXPLOSIONS_destruct, {"vehicleControllerNoStructure", "generic.lua", 1})
+table.insert(sb_EXPLOSIONS_destruct, {"turretCannon", "generic_huge.lua", 1})
+table.insert(sb_EXPLOSIONS_destruct, {"turretCannon3", "generic_huge.lua", 1})
+table.insert(sb_EXPLOSIONS_destruct, {"turretLaser", "generic_huge.lua", 1})
+table.insert(sb_EXPLOSIONS_destruct, {"turretLaser3", "generic_huge.lua", 1})
