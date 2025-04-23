@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{bf315c00-3556-49b9-a1a9-aa5c5a5decf9}">
+		<property name="assetPath">
+			<value>richochet_2.flac</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>1</value>
+		</property>
+		<property name="length">
+			<value>0.81637188208616784</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{57da8d23-6797-4a81-8598-bfcd0d674e8d}</destination>
+		</relationship>
+	</object>
+</objects>

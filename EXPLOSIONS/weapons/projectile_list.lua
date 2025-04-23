@@ -208,8 +208,11 @@ for k, v in pairs(Projectiles) do
 		v.ProjectileSplashMaxForce = 450000
 		v.Effects.Impact.default = path .. "/effects/impact_turret.lua"
 		v.Effects.Impact.antiair = path .. "/effects/hs_explosion_airburst.lua"
+	elseif sbeat(v.SaveName, "cannon20mm") then
+		v.Effects.Deflect.default = path .. "/effects/deflect_medium.lua"
 	elseif sbeat(v.SaveName, "cannon") then
 		v.ProjectileSplashMaxForce = 200000
+		v.Effects.Deflect.default = path .. "/effects/deflect_heavy.lua"
 	elseif sbeat(v.SaveName, "mortar") or sbeat(v.SaveName, "mortar2") then
 		v.ProjectileSplashMaxForce = 130000
 	end
