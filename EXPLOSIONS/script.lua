@@ -137,3 +137,11 @@ function Load()
 	end
 	--BetterLog(data.effect_impact)
 end
+
+--effect test
+--[[
+function OnKey(key, down)
+	if key == 'e' and down then
+		SpawnEffect(path .. "/effects/generic_huge.lua", ScreenToWorld(GetMousePos()))
+	end
+end]]

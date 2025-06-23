@@ -1,3 +1,6 @@
+if Effects then
+	Effects[1].LocalPosition.z = -1
+end
 if not Effects then Effects = {} end
 table.insert(Effects,
 {
@@ -6,7 +9,7 @@ table.insert(Effects,
 		SparkCount = 50,
 		BurstPeriod = 0.04,
 		SparksPerBurst = 1,
-		LocalPosition = { x = 0, y = 20 },	-- how to place the origin relative to effect position and direction (0, 0) 
+		LocalPosition = { x = 0, y = 20 , z = -10},	-- how to place the origin relative to effect position and direction (0, 0) 
 		Sprite = path .. "/effects/media/bloom1.dds",
 		Additive = true,
 		Gravity = 50,						-- gravity applied to particle (981 is earth equivalent)
