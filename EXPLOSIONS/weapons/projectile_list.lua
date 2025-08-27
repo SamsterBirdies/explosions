@@ -36,10 +36,23 @@ table.insert(Sprites,
 	Name = "sb_bloom_plasma",
 	States =
 	{
-		Normal = { Frames = 
+		--[[Normal = { Frames = 
 		{ 
 			{ texture = path .. "/effects/media/bloom_plasma.png"},
 			mipmap = false, mipMap = false, Mipmap = false, MipMap = false,
+		}},]]
+		Normal = { Frames = { 
+			{ texture = path .. "/effects/media/bloom_beam", colour = { 0.0, 0.0, 1, 0.3 },},
+		}},
+	},
+})
+table.insert(Sprites,
+{
+	Name = "sb_plasma",
+	States =
+	{
+		Normal = { Frames = { 
+			{ texture = "weapons/media/beam"},
 		}},
 	},
 })
@@ -91,8 +104,16 @@ for k, v in pairs(Projectiles) do
 		v.Effects.Impact.default = path .. "/effects/firebeam_hit.lua"
 		v.ProjectileSprite = "sb_bloom_firebeam"
 	elseif sbeat(v.SaveName, "laser") then
-		v.ProjectileSprite = "sb_bloom_plasma"
-		--[[v.BeamTable =
+		v.ProjectileSprite = "weapons/media/beam"
+		v.BeamTable =
+		{
+			{ 0,	1,	0, },
+			{ 0.25, 3,  0, },
+			{ 0.5,	30, 1000, },
+			{ 1,	30, 1000, }, -- 1000
+			{ 1.5,	0,	0, },
+		}
+		v.BeamTableBloom =
 		{
 			{ 0,	1 *  5,	0, },
 			{ 0.25, 3 *  5,  0, },
@@ -103,19 +124,31 @@ for k, v in pairs(Projectiles) do
 		v.BeamThickness = function(t)
 			return InterpolateTable(v.BeamTable, t, 2)
 		end
+		v.BeamThicknessBloom = function(t)
+			return InterpolateTable(v.BeamTableBloom, t, 2)
+		end
 		v.Beam =
 		{
 			Sprites = 
             {
 				{
-                    Sprite = "sb_bloom_plasma",
+                    Sprite = "sb_plasma",
                     TileRate = 100,
                     ThicknessFunction = "BeamThickness",
                     ScrollRate = -2,
+					--RepeatS = true,
+					Additive = false,
+                },
+				{
+                    Sprite = "sb_bloom_plasma",
+                    TileRate = 100,
+                    ThicknessFunction = "BeamThicknessBloom",
+                    ScrollRate = -2,
+					--RepeatS = true,
 					Additive = true,
                 },
 			},
-		}]]
+		}
 	elseif sbeat(v.SaveName, "missile") then
 		table.insert(v.Projectile.Root.ChildrenInFront,
 		{
