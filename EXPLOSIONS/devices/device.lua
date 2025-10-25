@@ -25,6 +25,7 @@ sbe_effects_list["mods/dlc1_weapons/effects/fire_howitzer.lua"] = path .. "/effe
 sbe_effects_list["effects/fire_minigun.lua"] = path .. "/effects/fire_minigun.lua"
 --seasonal
 sbe_effects_list["mods/theme_christmas/effects/mushroom_cloud_snowflakes.lua"] = path .. "/effects/christmas_reactor.lua"
+sbe_effects_list["mods/theme_halloween/effects/mushroom_cloud_halloween.lua"] = path .. "/effects/halloween_reactor.lua"
 
 if DestroyEffect and sbe_effects_list[DestroyEffect] then DestroyEffect = sbe_effects_list[DestroyEffect] end
 --seasonal

@@ -1,12 +1,23 @@
---reduce original effects.
+dofile("mods/theme_halloween/effects/mushroom_cloud_halloween.lua")
+dofile(path .. "/effects/util_dlc.lua")
+fix_paths("mods/theme_halloween")
 if Effects then
-	if Effects[14].Colour1 then Effects[14].Colour1 = { 255, 255, 255, 0 } end
-	if Effects[14].Colour2 then Effects[14].Colour2 = { 255, 160, 90, 0 } end
-	if Effects[15].Colour1 then Effects[15].Colour1 = { 255, 255, 255, 128 } end
-	if Effects[15].Colour2 then Effects[15].Colour2 = { 255, 255, 255, 128 } end
+	Effects[1].Keyframes[1].colour = {190, 60, 30, 255}
+	Effects[2].Keyframes[1].colour = {255, 90, 50, 255}
+	Effects[3].Keyframes[1].colour = {255, 0, 0, 255}
+	Effects[5].Keyframes[1].colour = {255, 40, 40, 128}
+	Effects[5].Keyframes[2].colour = {255, 40, 40, 128}
+	Effects[5].Keyframes[3].colour = {255, 40, 40, 128}
+	Effects[8].Keyframes[1].colour = {255, 200, 0, 255}
+	Effects[8].Keyframes[2].colour = {255, 200, 0, 255}
+	Effects[8].Keyframes[3].colour = {255, 200, 0, 255}
+	Effects[9].Keyframes[1].colour = {255, 90, 40, 128}
+	Effects[9].Keyframes[2].colour = {255, 90, 40, 128}
+	Effects[9].Keyframes[3].colour = {255, 90, 40, 128}
+	Effects[12].TrailEffect = path .. "/effects/halloween_ghoul_streams.lua"
+	Effects[13].TrailEffect = path .. "/effects/halloween_ghoul_streams.lua"
 end
 if not Effects then Effects = {} end
---add new bloomies
 table.insert(Effects, 
 	{
 		Type = "sprite",
@@ -23,8 +34,8 @@ table.insert(Effects,
 		Angle = -90,
 		AngularVelocity = 0,
 		RandomAngularVelocityMagnitude = 0,
-		Colour1 = { 255, 255, 255, 128 },
-		Colour2 = { 255, 100, 0, 0 },
+		Colour1 = { 255, 255, 128, 128 },
+		Colour2 = { 255, 0, 0, 0 },
 	}
 )
 table.insert(Effects, 
@@ -43,8 +54,8 @@ table.insert(Effects,
 		Angle = 90,
 		AngularVelocity = 0,
 		RandomAngularVelocityMagnitude = 200,
-		Colour1 = { 255, 255, 255, 160 },
-		Colour2 = { 255, 255, 255, 160 },
+		Colour1 = { 255, 70, 30, 160 },
+		Colour2 = { 255, 70, 30, 160 },
 	}
 )
 table.insert(Effects, 
@@ -64,7 +75,7 @@ table.insert(Effects,
 		AngularVelocity = 0,
 		RandomAngularVelocityMagnitude = 200,
 		Colour1 = { 255, 255, 255, 200 },
-		Colour2 = { 255, 140, 60, 90 },
+		Colour2 = { 255, 60, 10, 90 },
 	}
 )
 table.insert(Effects, 
@@ -83,8 +94,8 @@ table.insert(Effects,
 		Angle = -90,
 		AngularVelocity = 0,
 		RandomAngularVelocityMagnitude = 200,
-		Colour1 = { 255, 170, 100, 200 },
-		Colour2 = { 255, 120, 60, 90 },
+		Colour1 = { 255, 90, 60, 200 },
+		Colour2 = { 255, 40, 0, 90 },
 	}
 )
 table.insert(Effects,
@@ -104,8 +115,8 @@ table.insert(Effects,
 		RandomAngularVelocityMagnitude = 0,
 		Colour1Time = 0.03,
 		Colour2Time = 1,
-		Colour1 = { 255, 145, 70, 250 },
-		Colour2 = { 255, 120, 50, 0 },
+		Colour1 = { 255, 90, 60, 250 },
+		Colour2 = { 90, 60, 40, 0 },
 	})
 table.insert(Effects, 	
 	{
@@ -251,7 +262,7 @@ function BloomCloud(delay, extent, sparks, speed, outerSpeed, col, maxAge, scale
 		},
 	}
 end
-table.insert(Effects, BloomStem(0, 7, 9, StemDepthMain, { 172, 122, 25, 30 }, 10))
-table.insert(Effects, BloomStem(2, 2, 5, StemDepthLight, { 254, 215, 0, 30}, 10))
-table.insert(Effects, BloomStem(4, 3, 6, StemDepth, { 255, 166, 0, 30}, 10))
+table.insert(Effects, BloomStem(0, 7, 9, StemDepthMain, { 190, 60, 30, 30 }, 10))
+table.insert(Effects, BloomStem(2, 2, 5, StemDepthLight, {255, 90, 50, 30}, 10))
+table.insert(Effects, BloomStem(4, 3, 6, StemDepth, {255, 0, 0, 30}, 10))
 table.insert(Effects, BloomCloud(0, 18, 6, 90, -5, {255, 90, 40, 30}, 12, 6.5, FrontCloudDepth1, 0.3, 0.5, 0.3, 0.7, path .. "/effects/media/bloom1"))
