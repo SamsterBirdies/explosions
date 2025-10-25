@@ -37,7 +37,7 @@ table.insert(Effects,
 				Angle = 0,					-- angle of keyframe in degrees (e.g. -180, 45, 0)
 				RadialOffsetMin = 0,		-- minimum distance from effect origin
 				RadialOffsetMax = 20,		-- maximum distance from effect origin
-				ScaleMean = 2,			-- mean scale (normal distribution)
+				ScaleMean = 2.5,			-- mean scale (normal distribution)
 				ScaleStdDev = 0.4,			-- standard deviation of scale (0 will make them all the same size)
 				SpeedStretch = 0,			-- factor of speed by which to elongate the spark in the direction of travel (avoid using with rotation)
 				SpeedMean = 50,				-- mean speed of sparks at emission (normal distribution)
