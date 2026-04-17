@@ -76,7 +76,7 @@ Effects =
 		Angle = 0,
 		AngularVelocity = 0,
 		RandomAngularVelocityMagnitude = 0,
-		Colour1 = { 255, 230, 100, 160 },
+		Colour1 = { 255, 230, 100, 128 },
 		Colour2 = { 255, 200, 40, 30 },
 	},
 	{

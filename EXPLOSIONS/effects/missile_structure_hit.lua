@@ -53,7 +53,7 @@ Effects =
 		ExpansionRate = 2000,
 		Angle = -90,
 		AngularVelocity = 0,
-		RandomAngularVelocityMagnitude = 200,
+		RandomAngularVelocityMagnitude = 00,
 		Colour1 = { 255, 180, 120, 188 },
 		Colour2 = { 255, 80, 0, 0 },
 	},
@@ -72,7 +72,7 @@ Effects =
 		Angle = -90,
 		AngularVelocity = 0,
 		RandomAngularVelocityMagnitude = 700,
-		Colour1 = { 255, 255, 255, 158 },
+		Colour1 = { 255, 255, 255, 192 },
 		Colour2 = { 255, 170, 80, 50 },
 	},
 	{
