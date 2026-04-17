@@ -58,6 +58,16 @@ table.insert(Sprites,
 })
 table.insert(Sprites,
 {
+	Name = "sb_plasma_old",
+	States =
+	{
+		Normal = { Frames = { 
+			{ texture = path .. "/effects/media/bloom_plasma.png"},
+		}},
+	},
+})
+table.insert(Sprites,
+{
 	Name = "sb_bloom_firebeam",
 	States =
 	{
@@ -104,7 +114,8 @@ for k, v in pairs(Projectiles) do
 		v.Effects.Impact.default = path .. "/effects/firebeam_hit.lua"
 		v.ProjectileSprite = "sb_bloom_firebeam"
 	elseif sbeat(v.SaveName, "laser") then
-		v.ProjectileSprite = "weapons/media/beam"
+		v.ProjectileSprite = "sb_plasma_old"
+		--[[
 		v.BeamTable =
 		{
 			{ 0,	1,	0, },
@@ -148,7 +159,7 @@ for k, v in pairs(Projectiles) do
 					Additive = true,
                 },
 			},
-		}
+		}]]
 	elseif sbeat(v.SaveName, "missile") then
 		table.insert(v.Projectile.Root.ChildrenInFront,
 		{
