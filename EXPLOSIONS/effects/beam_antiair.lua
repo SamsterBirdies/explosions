@@ -96,3 +96,4 @@ table.insert(Effects,
 		Colour1 = { 120, 120, 255, 80 },
 		Colour2 = { 120, 120, 255, 120 },
 	})
+	
