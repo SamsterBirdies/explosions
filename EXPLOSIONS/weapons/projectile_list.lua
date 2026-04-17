@@ -42,7 +42,7 @@ table.insert(Sprites,
 			mipmap = false, mipMap = false, Mipmap = false, MipMap = false,
 		}},]]
 		Normal = { Frames = { 
-			{ texture = path .. "/effects/media/bloom_beam", colour = { 0.0, 0.0, 1, 0.3 },},
+			{ texture = path .. "/effects/media/bloom_beam_textured", colour = { 1, 1, 1, 1},},
 		}},
 	},
 })
@@ -136,7 +136,7 @@ for k, v in pairs(Projectiles) do
                     TileRate = 100,
                     ThicknessFunction = "BeamThickness",
                     ScrollRate = -2,
-					--RepeatS = true,
+					RepeatS = true,
 					Additive = false,
                 },
 				{
@@ -144,7 +144,7 @@ for k, v in pairs(Projectiles) do
                     TileRate = 100,
                     ThicknessFunction = "BeamThicknessBloom",
                     ScrollRate = -2,
-					--RepeatS = true,
+					RepeatS = true,
 					Additive = true,
                 },
 			},
@@ -202,7 +202,7 @@ for k, v in pairs(Projectiles) do
 			Root =
 			{
 				Name = "Bolt",
-				Sprite = "mods/dlc2/weapons/media/energy_bolt.tga",
+				Sprite = "mods/dlc_harpoon/effects/media/energy_bolt.dds",
 				Scale = 0.3,
 				ChildrenInFront =
 				{
