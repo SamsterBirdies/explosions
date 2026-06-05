@@ -1,5 +1,31 @@
-LifeSpan = 6
-SoundEvent = "mods/weapon_pack/effects/fire_firebeam"
+LifeSpan = 10
+SoundEvent = "mods/dlc1_weapons/effects/fire_magnabeam"
+Sprites =
+{
+	{
+		Name = "sbEXP_magnabeam_fire",
+
+		States =
+		{
+			Normal =
+			{
+				Frames =
+				{
+					{ texture = path .. "/effects/media/MagnabeamFX01.dds" },
+					{ texture = path .. "/effects/media/MagnabeamFX02.dds" },
+					{ texture = path .. "/effects/media/MagnabeamFX03.dds" },
+					{ texture = path .. "/effects/media/MagnabeamFX04.dds" },
+					duration = 0.066,
+					blendColour = false,
+					blendCoordinates = false,
+					mipmap = true,
+				},
+				--RandomPlayLength = 2,
+				NextState = "Normal",
+			},
+		},
+	},
+}
 Effects =
 {
 	{
@@ -9,9 +35,9 @@ Effects =
 		LocalVelocity = { x = 0, y = 0, z = 0 },
 		Acceleration = { x = 0, y = 0, z = 0 },
 		Drag = 0.0,
-		Sprite = "firebeam_fire",
+		Sprite = "sbEXP_magnabeam_fire",
 		Additive = true,
-		TimeToLive = 3,
+		TimeToLive = 10,
 		Angle = -90,
 		InitialSize = 1,
 		ExpansionRate = 0,
@@ -28,7 +54,7 @@ Effects =
 		BurstPeriod = 0.1,
 		SparksPerBurst = 3,
 		LocalPosition = { x = 0, y = 0, z = -2 },
-		Sprite = "mods/weapon_pack/effects/media/fireflare",
+		Sprite = path .. "/effects/media/magnaflare",
 
 		Gravity = 0,
 		Additive = true,
@@ -60,7 +86,7 @@ Effects =
 				AgeStdDev = 0,
 				AlphaKeys = { 0.1, 1 },
 				ScaleKeys = { 0.1, 0.2 },
-				colour = { 255, 100, 100, 40 },
+				colour = { 255, 255, 100, 40 },
 			},
 			{
 				Angle = 0,
@@ -80,7 +106,7 @@ Effects =
 				AgeStdDev = .025,
 				AlphaKeys = { 0.1, 1 },
 				ScaleKeys = { 0.1, 0.2 },
-				colour = { 255, 100, 100, 40 },
+				colour = { 255, 255, 100, 40 },
 			},
 			{
 				Angle = 80,
@@ -100,7 +126,7 @@ Effects =
 				AgeStdDev = 0,
 				AlphaKeys = { 0.1, 1 },
 				ScaleKeys = { 0.1, 0.2 },
-				colour = { 255, 100, 100, 40 },
+				colour = { 255, 255, 100, 40 },
 			},
 		},
 	},

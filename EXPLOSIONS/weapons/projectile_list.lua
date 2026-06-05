@@ -22,6 +22,22 @@ table.insert(Sprites,
 })
 table.insert(Sprites,
 {
+	Name = "sb_bloom_magneticfield",
+	States =
+	{
+		Normal = { Frames = 
+		{ 
+			{ texture = path .. "/effects/media/bloom1.png" , colour = { 0.85, 0.85, 0.2, 0.6 },},
+			{ texture = path .. "/effects/media/bloom1.png" , colour = { 0.9, 0.9, 0.1, 0.4 },},
+			{ texture = path .. "/effects/media/bloom1.png" , colour = { 1, 1, 0.0, 0.3 },},
+			{ texture = path .. "/effects/media/bloom1.png" , colour = { 0.9, 0.9, 0.1, 0.5 },},
+			duration = 0.04,
+			NextState = "Normal",
+		},},
+	},
+})
+table.insert(Sprites,
+{
 	Name = "sb_bloom_dome",
 	States =
 	{
@@ -31,16 +47,17 @@ table.insert(Sprites,
 		}},
 	},
 })
+--[[
 table.insert(Sprites,
 {
 	Name = "sb_bloom_plasma",
 	States =
 	{
-		--[[Normal = { Frames = 
+		Normal = { Frames = 
 		{ 
 			{ texture = path .. "/effects/media/bloom_plasma.png"},
 			mipmap = false, mipMap = false, Mipmap = false, MipMap = false,
-		}},]]
+		}},
 		Normal = { Frames = { 
 			{ texture = path .. "/effects/media/bloom_beam_textured", colour = { 1, 1, 1, 1},},
 		}},
@@ -55,7 +72,7 @@ table.insert(Sprites,
 			{ texture = "weapons/media/beam"},
 		}},
 	},
-})
+})]]
 table.insert(Sprites,
 {
 	Name = "sb_plasma_old",
@@ -63,6 +80,16 @@ table.insert(Sprites,
 	{
 		Normal = { Frames = { 
 			{ texture = path .. "/effects/media/bloom_plasma.png"},
+		}},
+	},
+})
+table.insert(Sprites,
+{
+	Name = "sb_bloom_magna",
+	States =
+	{
+		Normal = { Frames = { 
+			{ texture = path .. "/effects/media/bloom_magna.png"},
 		}},
 	},
 })
@@ -113,6 +140,27 @@ for k, v in pairs(Projectiles) do
 	elseif sbeat(v.SaveName, "firebeam") then
 		v.Effects.Impact.default = path .. "/effects/firebeam_hit.lua"
 		v.ProjectileSprite = "sb_bloom_firebeam"
+	elseif sbeat(v.SaveName, "magnabeam") then
+		v.ProjectileSprite = "sb_bloom_magna"
+	elseif sbeat(v.SaveName, "magneticfield") then
+		v.Projectile =
+		{
+			Root =
+			{
+				Name = "Sprite",
+				Sprite = "impact_magnabeam",
+				Scale = 3,
+				ChildrenInFront =
+				{
+					{
+						Name = "Bloom",
+						Sprite = "sb_bloom_magneticfield",
+						Additive = true,
+						Scale = 5,
+					},
+				},
+			},
+		}
 	elseif sbeat(v.SaveName, "laser") then
 		v.ProjectileSprite = "sb_plasma_old"
 		--[[

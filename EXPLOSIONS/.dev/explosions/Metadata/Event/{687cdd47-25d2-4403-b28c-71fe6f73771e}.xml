@@ -178,7 +178,7 @@
 	</object>
 	<object class="EventMixerGroup" id="{0bb62f38-335e-4607-820d-7c665f8903ff}">
 		<property name="volume">
-			<value>-10</value>
+			<value>-5</value>
 		</property>
 		<property name="name">
 			<value>Audio 1</value>
@@ -196,6 +196,9 @@
 	<object class="MultiSound" id="{8b305451-f387-4d95-bf26-f86c7e51b30a}">
 		<property name="length">
 			<value>4.9342403628117912</value>
+		</property>
+		<property name="pitch">
+			<value>1.39999998</value>
 		</property>
 		<relationship name="sounds">
 			<destination>{992e3d33-be26-4e54-8ad6-630130e5bf90}</destination>

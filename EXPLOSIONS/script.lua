@@ -28,6 +28,8 @@ data.effect_destruct =
 	ammo_orbital_sweep = path .. "/effects/firebeam_explode.lua", 
 	ammo_orbital_focus = "effects/battery_explode.lua",
 	factory = "effects/battery_explode.lua",
+	magnabeam = path .. "/effects/magna_explode.lua",
+	emp_beam = path .. "/effects/impact_emp.lua",
 }
 data.effect_impact =
 {
