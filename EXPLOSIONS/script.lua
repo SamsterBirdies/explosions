@@ -1,12 +1,9 @@
 dofile("scripts/forts.lua")
---dofile(path .. "/BetterLog.lua")
-
---dofile("mods/commander-cf-buster/effects/uranium_fly_missile.lua")
---e1 = Effects
-
---dofile("mods/commander-cf-buster/effects/impact_uranium.lua")
---e2 = Effects
-
+--[[
+dofile(path .. "/better_log.lua")
+dofile("mods/dlc3/effects/emp_beam_hit.lua")
+BetterLog(Sprites)
+BetterLog(Effects)]]
 --effect paths
 ed1 = path .. "/effects/generic.lua"
 ed2 = path .. "/effects/generic_large.lua"
@@ -18,7 +15,7 @@ data.effect_destruct =
 	upgrade = ed1, dome = ed1, harpoon = ed1, mortar = ed1, mortar2 = ed1,
 	--medium
 	comms = ed2, workshop = ed2, armoury = ed2, munitions = ed2,
-	orbital_laser = ed2, orbital_laser2 = ed2, ammo_thunderbolt = ed2, ammo_nighthawk = ed2, 
+	orbital_laser = ed2, orbital_laser2 = ed2, ammo_thunderbolt = ed1, ammo_nighthawk = ed1, 
 	ammo_control = ed2, subswarm = ed2, sublauncher = ed2, missile = ed2, missile2 = ed2,
 	--large
 	turret = ed3, turret2 = ed3, turret2_focus = ed3, turret3 = ed3, turret3_focus = ed3,

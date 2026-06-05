@@ -384,6 +384,8 @@ sbe_effects_list["mods/dlc2/effects/impact_bombs.lua"] = path .. "/effects/impac
 sbe_effects_list["mods/dlc2/effects/impact_turret.lua"] = path .. "/effects/impact_turret.lua"
 sbe_effects_list["mods/dlc2/effects/impact_paveway.lua"] = path .. "/effects/impact_paveway.lua"
 sbe_effects_list["mods/dlc2/effects/explosion_airburst.lua"] = path .. "/effects/hs_explosion_airburst.lua"
+sbe_effects_list["mods/dlc3/effects/emp_beam_hit.lua"] = path .. "/effects/empbeam_hit.lua"
+sbe_effects_list["mods/dlc3/effects/emp_beam_absorb.lua"] = path .. "/effects/firebeam_hit.lua"
 
 --apply mod
 function sb_apply_fx()
