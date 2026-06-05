@@ -11,10 +11,10 @@ table.insert(Sprites,
 			--{ texture = path .. "/effects/media/bloom1.png" , colour = { 0.9, 0.85, 0.3, 0.2 },},
 			--{ texture = path .. "/effects/media/bloom1.png" , colour = { 1, 0.85, 0.2, 0.1 },},
 			--{ texture = path .. "/effects/media/bloom1.png" , colour = { 0.9, 0.82, 0.3, 0.2 },},
-			{ texture = path .. "/effects/media/bloom1.png" , colour = { 0.85, 0.80, 0.2, 0.3 },},
-			{ texture = path .. "/effects/media/bloom1.png" , colour = { 0.9, 0.85, 0.1, 0.2 },},
-			{ texture = path .. "/effects/media/bloom1.png" , colour = { 1, 0.85, 0.0, 0.1 },},
-			{ texture = path .. "/effects/media/bloom1.png" , colour = { 0.9, 0.82, 0.1, 0.2 },},
+			{ texture = path .. "/effects/media/bloom1.png" , colour = { 0.85, 0.70, 0.2, 0.35 },},
+			{ texture = path .. "/effects/media/bloom1.png" , colour = { 0.9, 0.75, 0.1, 0.25 },},
+			{ texture = path .. "/effects/media/bloom1.png" , colour = { 1, 0.75, 0.0, 0.15 },},
+			{ texture = path .. "/effects/media/bloom1.png" , colour = { 0.9, 0.72, 0.1, 0.25 },},
 			duration = 0.04,
 			NextState = "Normal",
 		},},
@@ -160,7 +160,7 @@ for k, v in pairs(Projectiles) do
                 },
 			},
 		}]]
-	elseif sbeat(v.SaveName, "missile") then
+	--[[elseif sbeat(v.SaveName, "missile") then
 		table.insert(v.Projectile.Root.ChildrenInFront,
 		{
 			Name = "Bloom",
@@ -171,7 +171,7 @@ for k, v in pairs(Projectiles) do
 			Sprite = "sb_bloom_swarm",
 			Additive = true,
 			Scale = 4,
-		})
+		})]]
 	elseif sbeat(v.SaveName, "missile2") then
 		v.ProjectileSplashMaxForce = 400000
 		table.insert(v.Projectile.Root.ChildrenInFront,
@@ -184,7 +184,7 @@ for k, v in pairs(Projectiles) do
 			Sprite = "sb_bloom_swarm",
 			Additive = true,
 			Scale = 4,
-		})	
+		})
 	elseif sbeat(v.SaveName, "rocketemp") then
 		v.Effects.Impact.default = path .. "/effects/impact_emp.lua"
 		v.Effects.Impact.antiair = nil
@@ -213,7 +213,7 @@ for k, v in pairs(Projectiles) do
 			Root =
 			{
 				Name = "Bolt",
-				Sprite = "mods/dlc_harpoon/effects/media/energy_bolt.dds",
+				Sprite = "mods/dlc2/effects/media/energy_bolt.dds",
 				Scale = 0.3,
 				ChildrenInFront =
 				{
