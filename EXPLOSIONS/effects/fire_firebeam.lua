@@ -60,7 +60,7 @@ Effects =
 				AgeStdDev = 0,
 				AlphaKeys = { 0.1, 1 },
 				ScaleKeys = { 0.1, 0.2 },
-				colour = { 255, 100, 100, 30 },
+				colour = { 255, 100, 100, 40 },
 			},
 			{
 				Angle = 0,
@@ -80,7 +80,7 @@ Effects =
 				AgeStdDev = .025,
 				AlphaKeys = { 0.1, 1 },
 				ScaleKeys = { 0.1, 0.2 },
-				colour = { 255, 100, 100, 30 },
+				colour = { 255, 100, 100, 40 },
 			},
 			{
 				Angle = 80,
@@ -100,7 +100,7 @@ Effects =
 				AgeStdDev = 0,
 				AlphaKeys = { 0.1, 1 },
 				ScaleKeys = { 0.1, 0.2 },
-				colour = { 255, 100, 100, 30 },
+				colour = { 255, 100, 100, 40 },
 			},
 		},
 	},

@@ -1,6 +1,6 @@
 sb_EXPLOSIONS_path = path --can detect mod, hopefully
 --automatic device destruction splash force effect
-if DeviceSplashDamageMaxRadius and DeviceSplashDamageMaxRadius > 0 and DestroyProjectile == nil then
+if DeviceSplashDamageMaxRadius and DeviceSplashDamageMaxRadius > 0 and DestroyProjectile == nil and StructureSplashDamageMaxRadius and StructureSplashDamageMaxRadius >0 then
 	if DeviceSplashDamageMaxRadius >= 400 or StructureSplashDamageMaxRadius >= 220 then
 		DestroyProjectile = "sb_shockwave_huge"
 	elseif DeviceSplashDamageMaxRadius >= 300 or StructureSplashDamageMaxRadius >= 150 then
@@ -23,8 +23,10 @@ sbe_effects_list["mods/weapon_pack/effects/fire_shotgun.lua"] = path .. "/effect
 sbe_effects_list["mods/weapon_pack/effects/firebeam_explode.lua"] = path .. "/effects/firebeam_explode.lua"
 sbe_effects_list["mods/weapon_pack/effects/rocket_explode.lua"] = path .. "/effects/rocket_explode.lua"
 sbe_effects_list["mods/weapon_pack/effects/rocketemp_explode.lua"] = path .. "/effects/rocketemp_explode.lua"
-sbe_effects_list["mods/dlc1_weapons/effects/fire_smokebomb.lua"] = path .. "/effects/fire_smokebomb.lua"
+--sbe_effects_list["mods/dlc1_weapons/effects/fire_smokebomb.lua"] = path .. "/effects/fire_smokebomb.lua"
+sbe_effects_list["mods/dlc_smokebomb/effects/fire_smokebomb.lua"] = path .. "/effects/fire_smokebomb.lua"
 sbe_effects_list["mods/dlc1_weapons/effects/fire_howitzer.lua"] = path .. "/effects/fire_howitzer.lua"
+sbe_effects_list["mods/dlc1_weapons/effects/fire_magnabeam.lua"] = path .. "/effects/fire_magnabeam.lua"
 sbe_effects_list["effects/fire_minigun.lua"] = path .. "/effects/fire_minigun.lua"
 sbe_effects_list["mods/dlc2/effects/dome_fx.lua"] = path .. "/effects/dome_fx.lua"
 sbe_effects_list["mods/dlc2/effects/fire_deckgun.lua"] = path .. "/effects/fire_deckgun.lua"

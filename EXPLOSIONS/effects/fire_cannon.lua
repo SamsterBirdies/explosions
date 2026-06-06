@@ -1,5 +1,5 @@
 if not Effects then Effects = {} end
-table.insert(Effects,
+--[[table.insert(Effects,
 {
 	Type = "sprite",
 	TimeToTrigger = 0,
@@ -17,7 +17,7 @@ table.insert(Effects,
 	RandomAngularVelocityMagnitude = 0,
 	Colour1 = { 240, 255, 120, 160 },
 	Colour2 = { 255, 100, 0, 0 },
-})
+})]]
 table.insert(Effects,
 {
 	Type = "sprite",
@@ -34,7 +34,7 @@ table.insert(Effects,
 	Angle = 0,
 	AngularVelocity = 0,
 	RandomAngularVelocityMagnitude = 0,
-	Colour1 = { 230, 255, 170, 200 },
+	Colour1 = { 230, 255, 170, 128 },
 	Colour2 = { 200, 255, 100, 0 },
 })
 table.insert(Effects,

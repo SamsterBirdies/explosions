@@ -1,14 +1,60 @@
-if not Effects then Effects = {} end
-table.insert(Effects,
+LifeSpan = 10
+SoundEvent = "mods/dlc1_weapons/effects/fire_magnabeam"
+Sprites =
+{
 	{
+		Name = "sbEXP_magnabeam_fire",
+
+		States =
+		{
+			Normal =
+			{
+				Frames =
+				{
+					{ texture = path .. "/effects/media/MagnabeamFX01.dds" },
+					{ texture = path .. "/effects/media/MagnabeamFX02.dds" },
+					{ texture = path .. "/effects/media/MagnabeamFX03.dds" },
+					{ texture = path .. "/effects/media/MagnabeamFX04.dds" },
+					duration = 0.066,
+					blendColour = false,
+					blendCoordinates = false,
+					mipmap = true,
+				},
+				--RandomPlayLength = 2,
+				NextState = "Normal",
+			},
+		},
+	},
+}
+Effects =
+{
+	{
+		Type = "sprite",
+		TimeToTrigger = 0,
+		LocalPosition = { x = 12, y = 34, z = 0 },
+		LocalVelocity = { x = 0, y = 0, z = 0 },
+		Acceleration = { x = 0, y = 0, z = 0 },
+		Drag = 0.0,
+		Sprite = "sbEXP_magnabeam_fire",
+		Additive = true,
+		TimeToLive = 10,
+		Angle = -90,
+		InitialSize = 1,
+		ExpansionRate = 0,
+		AngularVelocity = 0,
+		RandomAngularVelocityMagnitude = 0,
+		KillParticleOnEffectCancel = true,
+		Colour1 = { 255, 255, 255, 255 },
+		Colour2 = { 255, 255, 255, 255 },
+	},
+{
 		Type = "sparks",
 		TimeToTrigger = 0.0,
-		SparkCount = 30,
-		BurstPeriod = 0.15,
-		BurstAfterDistance = 25,
+		SparkCount = 15,
+		BurstPeriod = 0.1,
 		SparksPerBurst = 3,
 		LocalPosition = { x = 0, y = 0, z = -2 },
-		Sprite = "effects/media/flare",
+		Sprite = path .. "/effects/media/magnaflare",
 
 		Gravity = 0,
 		Additive = true,
@@ -26,7 +72,7 @@ table.insert(Effects,
 				Angle = -80,
 				RadialOffsetMin = 0,
 				RadialOffsetMax = 20,
-				ScaleMean = 10,
+				ScaleMean = 5,
 				ScaleStdDev = 0.1,
 				SpeedStretch = 0.2,
 				SpeedMean = 500,
@@ -40,13 +86,13 @@ table.insert(Effects,
 				AgeStdDev = 0,
 				AlphaKeys = { 0.1, 1 },
 				ScaleKeys = { 0.1, 0.2 },
-				colour = { 40, 40, 255, 20 },
+				colour = { 255, 255, 100, 40 },
 			},
 			{
 				Angle = 0,
 				RadialOffsetMin = 0,
 				RadialOffsetMax = 20,
-				ScaleMean = 30,
+				ScaleMean = 20,
 				ScaleStdDev = 0.5,
 				SpeedStretch = 0,
 				SpeedMean = 10,
@@ -56,17 +102,17 @@ table.insert(Effects,
 				RotationStdDev = 45,
 				RotationalSpeedMean = 0,
 				RotationalSpeedStdDev = 15,	
-				AgeMean = 0.75,
+				AgeMean = 0.25,
 				AgeStdDev = .025,
 				AlphaKeys = { 0.1, 1 },
 				ScaleKeys = { 0.1, 0.2 },
-				colour = { 40, 40, 255, 20 },
+				colour = { 255, 255, 100, 40 },
 			},
 			{
 				Angle = 80,
 				RadialOffsetMin = 0,
 				RadialOffsetMax = 20,
-				ScaleMean = 10,
+				ScaleMean = 5,
 				ScaleStdDev = 0.1,
 				SpeedStretch = 0.2,
 				SpeedMean = 500,
@@ -80,8 +126,8 @@ table.insert(Effects,
 				AgeStdDev = 0,
 				AlphaKeys = { 0.1, 1 },
 				ScaleKeys = { 0.1, 0.2 },
-				colour = { 40, 40, 255, 20 },
+				colour = { 255, 255, 100, 40 },
 			},
 		},
-	}
-)
+	},
+}

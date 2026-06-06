@@ -45,7 +45,7 @@ Effects =
 			},
 		},
 	},
-	{
+	--[[{ --old bloom effect
 		Type = "sparks",
 		TimeToTrigger = 0.0,
 		SparkCount = 3,
@@ -84,6 +84,49 @@ Effects =
 				ScaleKeys = { 0.1, 1 },		-- fractions of life span between which the spark reaches full scale (balloon in -> full scale -> shrink out)
 				colour = { 255, 120, 50, 40 }, -- Colour used to modulate the sprite
 				--old colour = { 255, 120, 50, 50 },
+			},
+		},
+	},]]
+	{--GLOW LARGE
+		Type = "sparks",
+		TimeToTrigger = 0,
+		SparkCount = 3,
+		BurstPeriod = 0.15,
+		SparksPerBurst = 1,
+		LocalPosition = { x = 0, y = 0, z = -10 },
+		Sprite = path .. "/effects/media/bloom1.png",
+
+		Gravity = 0,
+		Additive = true,
+
+		EvenDistribution =					-- distribute sparks evenly between two angles with optional variation
+		{
+			Min = -80,						-- minimum angle in degrees (e.g. -180, 45, 0)
+			Max = 80,						-- maximum angle in degrees (e.g. -180, 45, 0)
+			StdDev = 5,						-- standard deviation at each iteration in degrees (zero will make them space perfectly even)
+		},
+
+		Keyframes =							
+		{
+			{
+				Angle = 0,
+				RadialOffsetMin = 0,
+				RadialOffsetMax = 0,
+				ScaleMean = 3.5,
+				ScaleStdDev = 0.5,
+				SpeedStretch = 2,
+				SpeedMean = 5,
+				SpeedStdDev = 1,
+				Drag = 0.1,
+				RotationMean = 0,
+				RotationStdDev = 45,
+				RotationalSpeedMean = 0,
+				RotationalSpeedStdDev = 15,	
+				AgeMean = 0.75,
+				AgeStdDev = .025,
+				AlphaKeys = { 0.1, 1 },
+				ScaleKeys = { 0.1, 0.2 },
+				colour = { 255, 120, 50, 30 }, --ORANGE
 			},
 		},
 	},

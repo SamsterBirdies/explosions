@@ -29,7 +29,7 @@ table.insert(Effects,
 		ExpansionRate = -700,
 		Angle = -90,
 		AngularVelocity = 0,
-		RandomAngularVelocityMagnitude = 100,
+		RandomAngularVelocityMagnitude = 00,
 		Colour1 = { 255, 222, 100, 160 },
 		Colour2 = { 255, 170, 0, 30 },
 	})

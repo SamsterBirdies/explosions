@@ -1,4 +1,4 @@
---dofile(path .. "/BetterLog.lua")
+--dofile(path .. "/better_log.lua")
 sb_EXPLOSIONS_path = path
 table.insert(Sprites,
 {
@@ -11,10 +11,26 @@ table.insert(Sprites,
 			--{ texture = path .. "/effects/media/bloom1.png" , colour = { 0.9, 0.85, 0.3, 0.2 },},
 			--{ texture = path .. "/effects/media/bloom1.png" , colour = { 1, 0.85, 0.2, 0.1 },},
 			--{ texture = path .. "/effects/media/bloom1.png" , colour = { 0.9, 0.82, 0.3, 0.2 },},
-			{ texture = path .. "/effects/media/bloom1.png" , colour = { 0.85, 0.80, 0.2, 0.3 },},
-			{ texture = path .. "/effects/media/bloom1.png" , colour = { 0.9, 0.85, 0.1, 0.2 },},
-			{ texture = path .. "/effects/media/bloom1.png" , colour = { 1, 0.85, 0.0, 0.1 },},
-			{ texture = path .. "/effects/media/bloom1.png" , colour = { 0.9, 0.82, 0.1, 0.2 },},
+			{ texture = path .. "/effects/media/bloom1.png" , colour = { 0.85, 0.70, 0.2, 0.35 },},
+			{ texture = path .. "/effects/media/bloom1.png" , colour = { 0.9, 0.75, 0.1, 0.25 },},
+			{ texture = path .. "/effects/media/bloom1.png" , colour = { 1, 0.75, 0.0, 0.15 },},
+			{ texture = path .. "/effects/media/bloom1.png" , colour = { 0.9, 0.72, 0.1, 0.25 },},
+			duration = 0.04,
+			NextState = "Normal",
+		},},
+	},
+})
+table.insert(Sprites,
+{
+	Name = "sb_bloom_magneticfield",
+	States =
+	{
+		Normal = { Frames = 
+		{ 
+			{ texture = path .. "/effects/media/bloom1.png" , colour = { 0.85, 0.85, 0.2, 0.6 },},
+			{ texture = path .. "/effects/media/bloom1.png" , colour = { 0.9, 0.9, 0.1, 0.4 },},
+			{ texture = path .. "/effects/media/bloom1.png" , colour = { 1, 1, 0.0, 0.3 },},
+			{ texture = path .. "/effects/media/bloom1.png" , colour = { 0.9, 0.9, 0.1, 0.5 },},
 			duration = 0.04,
 			NextState = "Normal",
 		},},
@@ -31,6 +47,7 @@ table.insert(Sprites,
 		}},
 	},
 })
+--[[
 table.insert(Sprites,
 {
 	Name = "sb_bloom_plasma",
@@ -40,6 +57,39 @@ table.insert(Sprites,
 		{ 
 			{ texture = path .. "/effects/media/bloom_plasma.png"},
 			mipmap = false, mipMap = false, Mipmap = false, MipMap = false,
+		}},
+		Normal = { Frames = { 
+			{ texture = path .. "/effects/media/bloom_beam_textured", colour = { 1, 1, 1, 1},},
+		}},
+	},
+})
+table.insert(Sprites,
+{
+	Name = "sb_plasma",
+	States =
+	{
+		Normal = { Frames = { 
+			{ texture = "weapons/media/beam"},
+		}},
+	},
+})]]
+table.insert(Sprites,
+{
+	Name = "sb_plasma_old",
+	States =
+	{
+		Normal = { Frames = { 
+			{ texture = path .. "/effects/media/bloom_plasma.png"},
+		}},
+	},
+})
+table.insert(Sprites,
+{
+	Name = "sb_bloom_magna",
+	States =
+	{
+		Normal = { Frames = { 
+			{ texture = path .. "/effects/media/bloom_magna.png"},
 		}},
 	},
 })
@@ -55,6 +105,28 @@ table.insert(Sprites,
 		}},
 	},
 })
+--[[
+table.insert(Sprites,
+{
+	Name = "sb_bloom_ol_sweep",
+	States =
+	{
+		Normal = { Frames = { 
+			{ texture = path .. "/effects/media/bloom_ol_sweep.png"},
+		}},
+	},
+})
+for k, v in pairs(Projectiles) do
+	if v.SaveName == "ol_beam_sweep" then
+		table.remove(Projectiles, k)
+		break
+	end
+end
+
+FindProjectile("emp_beam").SaveName = "ol_beam_sweep"
+empbeam = DeepCopy(FindProjectile("ol_beam_sweep"))
+empbeam.SaveName = "emp_beam"
+table.insert(Projectiles, empbeam)]]
 local function sbeat(saveName, saveName2)
 	--returns true for other versions of the projectile aswell like flaming versions.
 	if saveName == saveName2 or saveName == "flaming" .. saveName2 or saveName == "armoured" .. saveName2 or saveName == "vacuum" .. saveName2 or saveName == "drunk" .. saveName2 or saveName == "damaged" .. saveName2 then 
@@ -91,32 +163,45 @@ for k, v in pairs(Projectiles) do
 		v.Effects.Impact.default = path .. "/effects/firebeam_hit.lua"
 		v.ProjectileSprite = "sb_bloom_firebeam"
 	elseif sbeat(v.SaveName, "laser") then
-		v.ProjectileSprite = "sb_bloom_plasma"
-		--[[v.BeamTable =
+		v.ProjectileSprite = "sb_plasma_old"
+	elseif sbeat(v.SaveName, "magnabeam") then
+		v.ProjectileSprite = "sb_bloom_magna"
+	elseif sbeat(v.SaveName, "magneticfield") then
+		v.Projectile =
 		{
-			{ 0,	1 *  5,	0, },
-			{ 0.25, 3 *  5,  0, },
-			{ 0.5,	30 * 5, 1000, },
-			{ 1,	30 * 5, 1000, }, -- 1000
-			{ 1.5,	0 *  5,	0, },
-		}
-		v.BeamThickness = function(t)
-			return InterpolateTable(v.BeamTable, t, 2)
-		end
-		v.Beam =
-		{
-			Sprites = 
-            {
+			Root =
+			{
+				Name = "Sprite",
+				Sprite = "impact_magnabeam",
+				Scale = 3,
+				ChildrenInFront =
 				{
-                    Sprite = "sb_bloom_plasma",
-                    TileRate = 100,
-                    ThicknessFunction = "BeamThickness",
-                    ScrollRate = -2,
-					Additive = true,
-                },
+					{
+						Name = "Bloom",
+						Sprite = "sb_bloom_magneticfield",
+						Additive = true,
+						Scale = 5,
+					},
+				},
 			},
-		}]]
-	elseif sbeat(v.SaveName, "missile") then
+		}
+	--elseif sbeat(v.SaveName, "ol_beam_sweep") then --thats enough. this forts bug has tormented me since 2023. im gonna make my own beam rendering system.
+		
+		--[[
+		v.BeamBloomThickness = function(t)
+			return InterpolateTable(SweepBeamTable, t, 2) * 4
+		end
+		
+		table.insert(v.Beam.Sprites, 1,
+		{
+			Sprite = "sb_bloom_ol_sweep",
+			TileRate = 1200,
+			ThicknessFunction = "BeamBloomThickness",
+			ScrollRate = -2,
+			Additive = true,
+			RepeatS = true,
+		})]]
+	--[[elseif sbeat(v.SaveName, "missile") then
 		table.insert(v.Projectile.Root.ChildrenInFront,
 		{
 			Name = "Bloom",
@@ -127,7 +212,7 @@ for k, v in pairs(Projectiles) do
 			Sprite = "sb_bloom_swarm",
 			Additive = true,
 			Scale = 4,
-		})
+		})]]
 	elseif sbeat(v.SaveName, "missile2") then
 		v.ProjectileSplashMaxForce = 400000
 		table.insert(v.Projectile.Root.ChildrenInFront,
@@ -140,7 +225,7 @@ for k, v in pairs(Projectiles) do
 			Sprite = "sb_bloom_swarm",
 			Additive = true,
 			Scale = 4,
-		})	
+		})
 	elseif sbeat(v.SaveName, "rocketemp") then
 		v.Effects.Impact.default = path .. "/effects/impact_emp.lua"
 		v.Effects.Impact.antiair = nil
@@ -169,7 +254,7 @@ for k, v in pairs(Projectiles) do
 			Root =
 			{
 				Name = "Bolt",
-				Sprite = "mods/dlc2/weapons/media/energy_bolt.tga",
+				Sprite = "mods/dlc2/effects/media/energy_bolt.dds",
 				Scale = 0.3,
 				ChildrenInFront =
 				{
@@ -292,6 +377,8 @@ sbe_effects_list["mods/dlc2/effects/impact_bombs.lua"] = path .. "/effects/impac
 sbe_effects_list["mods/dlc2/effects/impact_turret.lua"] = path .. "/effects/impact_turret.lua"
 sbe_effects_list["mods/dlc2/effects/impact_paveway.lua"] = path .. "/effects/impact_paveway.lua"
 sbe_effects_list["mods/dlc2/effects/explosion_airburst.lua"] = path .. "/effects/hs_explosion_airburst.lua"
+sbe_effects_list["mods/dlc3/effects/emp_beam_hit.lua"] = path .. "/effects/empbeam_hit.lua"
+sbe_effects_list["mods/dlc3/effects/emp_beam_absorb.lua"] = path .. "/effects/firebeam_hit.lua"
 
 --apply mod
 function sb_apply_fx()
