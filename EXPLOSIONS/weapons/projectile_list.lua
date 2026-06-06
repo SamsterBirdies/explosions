@@ -1,4 +1,4 @@
---dofile(path .. "/BetterLog.lua")
+--dofile(path .. "/better_log.lua")
 sb_EXPLOSIONS_path = path
 table.insert(Sprites,
 {
@@ -105,6 +105,28 @@ table.insert(Sprites,
 		}},
 	},
 })
+--[[
+table.insert(Sprites,
+{
+	Name = "sb_bloom_ol_sweep",
+	States =
+	{
+		Normal = { Frames = { 
+			{ texture = path .. "/effects/media/bloom_ol_sweep.png"},
+		}},
+	},
+})
+for k, v in pairs(Projectiles) do
+	if v.SaveName == "ol_beam_sweep" then
+		table.remove(Projectiles, k)
+		break
+	end
+end
+
+FindProjectile("emp_beam").SaveName = "ol_beam_sweep"
+empbeam = DeepCopy(FindProjectile("ol_beam_sweep"))
+empbeam.SaveName = "emp_beam"
+table.insert(Projectiles, empbeam)]]
 local function sbeat(saveName, saveName2)
 	--returns true for other versions of the projectile aswell like flaming versions.
 	if saveName == saveName2 or saveName == "flaming" .. saveName2 or saveName == "armoured" .. saveName2 or saveName == "vacuum" .. saveName2 or saveName == "drunk" .. saveName2 or saveName == "damaged" .. saveName2 then 
@@ -140,6 +162,8 @@ for k, v in pairs(Projectiles) do
 	elseif sbeat(v.SaveName, "firebeam") then
 		v.Effects.Impact.default = path .. "/effects/firebeam_hit.lua"
 		v.ProjectileSprite = "sb_bloom_firebeam"
+	elseif sbeat(v.SaveName, "laser") then
+		v.ProjectileSprite = "sb_plasma_old"
 	elseif sbeat(v.SaveName, "magnabeam") then
 		v.ProjectileSprite = "sb_bloom_magna"
 	elseif sbeat(v.SaveName, "magneticfield") then
@@ -161,53 +185,22 @@ for k, v in pairs(Projectiles) do
 				},
 			},
 		}
-	elseif sbeat(v.SaveName, "laser") then
-		v.ProjectileSprite = "sb_plasma_old"
+	--elseif sbeat(v.SaveName, "ol_beam_sweep") then --thats enough. this forts bug has tormented me since 2023. im gonna make my own beam rendering system.
+		
 		--[[
-		v.BeamTable =
-		{
-			{ 0,	1,	0, },
-			{ 0.25, 3,  0, },
-			{ 0.5,	30, 1000, },
-			{ 1,	30, 1000, }, -- 1000
-			{ 1.5,	0,	0, },
-		}
-		v.BeamTableBloom =
-		{
-			{ 0,	1 *  5,	0, },
-			{ 0.25, 3 *  5,  0, },
-			{ 0.5,	30 * 5, 1000, },
-			{ 1,	30 * 5, 1000, }, -- 1000
-			{ 1.5,	0 *  5,	0, },
-		}
-		v.BeamThickness = function(t)
-			return InterpolateTable(v.BeamTable, t, 2)
+		v.BeamBloomThickness = function(t)
+			return InterpolateTable(SweepBeamTable, t, 2) * 4
 		end
-		v.BeamThicknessBloom = function(t)
-			return InterpolateTable(v.BeamTableBloom, t, 2)
-		end
-		v.Beam =
+		
+		table.insert(v.Beam.Sprites, 1,
 		{
-			Sprites = 
-            {
-				{
-                    Sprite = "sb_plasma",
-                    TileRate = 100,
-                    ThicknessFunction = "BeamThickness",
-                    ScrollRate = -2,
-					RepeatS = true,
-					Additive = false,
-                },
-				{
-                    Sprite = "sb_bloom_plasma",
-                    TileRate = 100,
-                    ThicknessFunction = "BeamThicknessBloom",
-                    ScrollRate = -2,
-					RepeatS = true,
-					Additive = true,
-                },
-			},
-		}]]
+			Sprite = "sb_bloom_ol_sweep",
+			TileRate = 1200,
+			ThicknessFunction = "BeamBloomThickness",
+			ScrollRate = -2,
+			Additive = true,
+			RepeatS = true,
+		})]]
 	--[[elseif sbeat(v.SaveName, "missile") then
 		table.insert(v.Projectile.Root.ChildrenInFront,
 		{

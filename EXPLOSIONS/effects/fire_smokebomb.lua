@@ -1,6 +1,8 @@
-dofile("mods/dlc1_weapons/effects/fire_smokebomb.lua")
+--dofile("mods/dlc1_weapons/effects/fire_smokebomb.lua")
+dofile("mods/dlc_smokebomb/effects/fire_smokebomb.lua")
 Sprites = {}
-SoundEvent = "mods/dlc1_weapons/effects/fire_smokebomb"
+--SoundEvent = "mods/dlc1_weapons/effects/fire_smokebomb"
+SoundEvent = "mods/dlc_smokebomb/effects/fire_smokebomb"
 table.insert(Effects,
 	{
 		Type = "sprite",
