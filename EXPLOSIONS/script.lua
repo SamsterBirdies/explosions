@@ -1,7 +1,7 @@
 dofile("scripts/forts.lua")
---[[
-dofile(path .. "/better_log.lua")
-dofile("mods/dlc3/effects/emp_beam_hit.lua")
+
+--[[dofile(path .. "/better_log.lua")
+dofile("mods/dlc3/effects/zapper.lua")
 BetterLog(Sprites)
 BetterLog(Effects)]]
 --effect paths

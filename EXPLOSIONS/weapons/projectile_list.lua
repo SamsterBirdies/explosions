@@ -422,4 +422,15 @@ function sb_apply_fx()
 	end
 end
 --sb_apply_fx()
+
+--post applied fixes (for mods that have been negatively affected)
+function sb_exp_postfixes()
+	for k, v in pairs(Projectiles) do
+		if sbeat(v.SaveName, "turretCannonHeat") then
+			v.Effects.Deflect.default = nil
+		end
+	end
+end
+
 RegisterApplyMod(sb_apply_fx)
+RegisterApplyMod(sb_exp_postfixes)
