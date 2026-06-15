@@ -22,6 +22,22 @@ table.insert(Sprites,
 })
 table.insert(Sprites,
 {
+	Name = "sb_bloom_swarm2",
+	States =
+	{
+		Normal = { Frames = 
+		{ 
+			{ texture = path .. "/effects/media/bloom1.png" , colour = { 1, 1, 1, 1 },},
+			{ texture = path .. "/effects/media/bloom1.png" , colour = { 1, 1, 1, 0.6 },},
+			{ texture = path .. "/effects/media/bloom1.png" , colour = { 1, 1, 1, 0.3 },},
+			{ texture = path .. "/effects/media/bloom1.png" , colour = { 1, 1, 1, 0.75 },},
+			duration = 0.04,
+			NextState = "Normal",
+		},},
+	},
+})
+table.insert(Sprites,
+{
 	Name = "sb_bloom_magneticfield",
 	States =
 	{
@@ -201,18 +217,22 @@ for k, v in pairs(Projectiles) do
 			Additive = true,
 			RepeatS = true,
 		})]]
-	--[[elseif sbeat(v.SaveName, "missile") then
+	elseif sbeat(v.SaveName, "missile") then
+		if #v.Projectile.Root.ChildrenInFront == 2 then
+			table.remove(v.Projectile.Root.ChildrenInFront, 2)
+		end
 		table.insert(v.Projectile.Root.ChildrenInFront,
 		{
 			Name = "Bloom",
 			Angle = 0,
 			Offset = { 0, 0.25 },
-			Pivot = { 0, 0.25 },
+			Pivot = { 0, 0.2 },
 			PivotOffset = { 0, 0 },
-			Sprite = "sb_bloom_swarm",
+			Sprite = "sb_bloom_swarm2",
 			Additive = true,
-			Scale = 4,
-		})]]
+			Scale = 2.5,
+			Colour = { 255, 164, 24, 128},
+		})
 	elseif sbeat(v.SaveName, "missile2") then
 		v.ProjectileSplashMaxForce = 400000
 		table.insert(v.Projectile.Root.ChildrenInFront,

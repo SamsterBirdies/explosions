@@ -20,7 +20,7 @@ function GenerateBeamTableEXP(duration, interval, scale)
 	BeamTableEXP[8][2] = scale*35
 end
 
-GenerateBeamTableEXP(BeamDuration, 0.05, 5)
+GenerateBeamTableEXP(BeamDuration * 2, 0.05, 5)
 
 function BeamThickness(t)
 	return InterpolateTable(BeamTableEXP, t, 2)
