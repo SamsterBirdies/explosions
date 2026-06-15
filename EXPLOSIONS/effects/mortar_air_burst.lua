@@ -1,4 +1,5 @@
 LifeSpan = 6
+
 if not Effects then Effects = {} end
 table.insert(Effects,
 	{
@@ -20,6 +21,7 @@ table.insert(Effects,
 		Colour2 = { 255, 190, 50, 60 },
 	}
 )
+--[[
 table.insert(Effects,
 	{
 	--DUST CLOUDS
@@ -27,7 +29,7 @@ table.insert(Effects,
 		TimeToTrigger = 0,
 		SparkCount = 3,
 		LocalPosition = { x = 0, y = 0, z = 1 },	-- how to place the origin relative to effect position and direction (0, 0) 
-		Texture = "effects/media/smoke",
+		Texture = path .. "/effects/media/smoke1",
 
 		Gravity = 0,						-- gravity applied to particle (981 is earth equivalent)
 		
@@ -45,7 +47,7 @@ table.insert(Effects,
 				RadialOffsetMin = 0,
 				RadialOffsetMax = 20,
 				ScaleMean = 3,
-				ScaleStdDev = 1,
+				ScaleStdDev = 2,
 				SpeedStretch = 0,
 				SpeedMean = 200,	
 				SpeedStdDev = 100,
@@ -58,10 +60,11 @@ table.insert(Effects,
 				AgeStdDev = 1.5,
 				AlphaKeys = { 0.5, 0.5 },
 				ScaleKeys = { 0.1, 0.5 },
+				colour = { 64, 64, 64, 96 },
 			},
 		},
 	}
-)
+)]]
 table.insert(Effects,
 	{
 		Type = "shake",

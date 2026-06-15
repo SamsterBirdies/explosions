@@ -7,7 +7,9 @@ BetterLog(Effects)]]
 --effect paths
 ed1 = path .. "/effects/generic.lua"
 ed2 = path .. "/effects/generic_large.lua"
+ed2ns = path .. "/effects/generic_large_nosound.lua"
 ed3 = path .. "/effects/generic_huge.lua"
+ed3ns = path .. "/effects/generic_huge_nosound.lua"
 --device destruct effects
 data.effect_destruct =
 {
@@ -16,7 +18,7 @@ data.effect_destruct =
 	--medium
 	comms = ed2, workshop = ed2, armoury = ed2, munitions = ed2,
 	orbital_laser = ed2, orbital_laser2 = ed2, ammo_thunderbolt = ed1, ammo_nighthawk = ed1, 
-	ammo_control = ed2, subswarm = ed2, sublauncher = ed2, missile = ed2, missile2 = ed2,
+	ammo_control = ed2, subswarm = ed2, sublauncher = ed2, missile = ed2, missile2 = ed2, fireball_cannon = ed2ns,
 	--large
 	turret = ed3, turret2 = ed3, turret2_focus = ed3, turret3 = ed3, turret3_focus = ed3,
 	howitzer = ed3, runway = ed3, runway2 = ed3, shipping_container = ed3,
@@ -26,7 +28,10 @@ data.effect_destruct =
 	ammo_orbital_focus = "effects/battery_explode.lua",
 	factory = "effects/battery_explode.lua",
 	magnabeam = path .. "/effects/magna_explode.lua",
-	emp_beam = path .. "/effects/impact_emp.lua",
+	emp_beam = path .. "/effects/empbeam_destroy.lua",
+	--striker = ,
+	lightningbeam = path .. "/effects/lightningbeam_destroy.lua",
+	volatile_canister = path .. "/effects/canister_destroy.lua",
 }
 data.effect_impact =
 {

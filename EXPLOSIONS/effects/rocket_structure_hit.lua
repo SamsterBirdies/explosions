@@ -63,7 +63,7 @@ Effects =
 		TimeToTrigger = 0,
 		SparkCount = 8,
 		LocalPosition = { x = 0, y = 0, z = 1 },	-- how to place the origin relative to effect position and direction (0, 0) 
-		Texture = "effects/media/smoke",
+		Texture = path .. "/effects/media/smoke1",
 
 		Gravity = 0,						-- gravity applied to particle (981 is earth equivalent)
 		
@@ -80,8 +80,8 @@ Effects =
 				Angle = 0,
 				RadialOffsetMin = 0,
 				RadialOffsetMax = 20,
-				ScaleMean = 3,
-				ScaleStdDev = 1,
+				ScaleMean = 3.5,
+				ScaleStdDev = 3,
 				SpeedStretch = 0,
 				SpeedMean = 200,	
 				SpeedStdDev = 150,
@@ -94,6 +94,7 @@ Effects =
 				AgeStdDev = 1.0,
 				AlphaKeys = { 0.5, 0.5 },
 				ScaleKeys = { 0.1, 0.5 },
+				colour = { 64, 64, 64, 96 },
 			},
 		},
 	},

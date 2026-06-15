@@ -10,8 +10,9 @@ Effects =
 		SparkCount = 5,
 		BurstPeriod = 1,
 		SparksPerBurst = 1,
-		LocalPosition = { x = 0, y = 20, z = -1 },	-- how to place the origin relative to effect position and direction (0, 0) 
-		Sprite = "effects/media/cloud.dds",
+		LocalPosition = { x = 0, y = 20, z = -11 },	-- how to place the origin relative to effect position and direction (0, 0) 
+		--Sprite = "effects/media/ExplosionMedium.dds",
+		Sprite = path .. "/effects/media/smoke0.dds",
 
 		Gravity = 0,						-- gravity applied to particle (981 is earth equivalent)
 
@@ -30,8 +31,8 @@ Effects =
 				ScaleMean = 4,				-- mean scale (normal distribution)
 				ScaleStdDev = 2,			-- standard deviation of scale (0 will make them all the same size)
 				SpeedStretch = 0,			-- factor of speed by which to elongate the spark in the direction of travel (avoid using with rotation)
-				SpeedMean = 75,				-- mean speed of sparks at emission (normal distribution)
-				SpeedStdDev = 16,			-- standard deviation of spark speed at emission
+				SpeedMean = 75 * 1.5,				-- mean speed of sparks at emission (normal distribution)
+				SpeedStdDev = 16 * 1.5,			-- standard deviation of spark speed at emission
 				Drag = 0.06,			-- drag of sparks (zero will make them continue at same speed)
 				RotationMean = 0,			-- mean initial rotation in degrees (e.g. -180, 45, 0) (normal distribution)
 				RotationStdDev = 45,		-- standard deviation of initial rotation in degrees (zero will make them start at the same angle)
@@ -41,7 +42,7 @@ Effects =
 				AgeStdDev = 1,				-- standard deviation of age in seconds (zero makes them last the same length of time)
 				AlphaKeys = { 0.5, 0.5 },	-- fractions of life span between which the spark reaches full alpha (fade in -> full alpha -> fade out)
 				ScaleKeys = { 0.1, 1 },		-- fractions of life span between which the spark reaches full scale (balloon in -> full scale -> shrink out)
-				colour = { 255, 255, 255, 50 }, -- Colour used to modulate the sprite
+				colour = { 255, 255, 255, 12 }, -- Colour used to modulate the sprite
 			},
 		},
 	},
