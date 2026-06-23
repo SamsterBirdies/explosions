@@ -1,7 +1,7 @@
 dofile("scripts/forts.lua")
-
---[[dofile(path .. "/better_log.lua")
-dofile("mods/dlc3/effects/zapper.lua")
+--[[
+dofile(path .. "/better_log.lua")
+dofile("mods/dlc2/effects/impact_turret.lua")
 BetterLog(Sprites)
 BetterLog(Effects)]]
 --effect paths
@@ -38,7 +38,7 @@ data.effect_impact =
 	--destroytype flags: {none,unknown,hitprojectile,hitbeam,hitterrain,hitstructure,hitdevice,outofworld,expired,ageeffect,debriscleanup}
 	nighthawk = {path .. "/effects/plane_overlay.lua", {false,false,true,true,false,false,false,false,false,false,false}},
 	thunderbolt = {path .. "/effects/plane_overlay.lua", {false,false,true,true,false,false,false,false,false,false,false}},
-	--turret = {"mods/dlc2/effects/bombs_hit", {false,false,true,true,true,true,true,false,true,false,false}},
+	turret = {path .. "/effects/impact_turret.lua", {false,false,false,false,true,true,true,false,false,false,false}},
 	--dome = {"mods/dlc2/effects/dome_projectile_hit", {false,false,false,false,false,false,false,false,false,true,false}},
 	--bomb = {"mods/dlc2/effects/bombs_hit", {false,false,true,true,true,true,true,false,true,false,false}},
 	--paveway = {"mods/dlc2/effects/nighthawk_projectile_hit", {false,false,true,true,true,true,true,false,true,false,false}},

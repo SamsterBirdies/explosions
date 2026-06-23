@@ -1,9 +1,11 @@
-dofile("mods/dlc2/effects/impact_turret.lua")
+--[[dofile("mods/dlc2/effects/impact_turret.lua")
 dofile(path .. "/effects/util_dlc.lua")
 dofile(path .. "/effects/util.lua")
-fix_dupe("explosion_turret", "mods/dlc2")
-
+fix_dupe("explosion_turret", "mods/dlc_common")
+]]
+LifeSpan = 3
 --table.insert(Effects, Flames(6, 0.3, 1700))
+Effects = {}
 table.insert(Effects,
 	{
 		Type = "shake",
